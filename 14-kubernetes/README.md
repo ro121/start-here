@@ -66,7 +66,7 @@ This is one dependency-compatible reading order. External prerequisites can be l
 
 **Prerequisites:** [[14-kubernetes/README#Kubernetes Pods and Workloads|Kubernetes Pods and Workloads]] · [Kubernetes Pods and Workloads](README.md#kubernetes-pods); [[04-networking/dns|DNS]] · [DNS](../04-networking/dns.md); [[04-networking/README#Routing|Routing]] · [Routing](../04-networking/README.md#routing)
 
-**Implements / applies:** [[04-networking/dns|DNS]] · [DNS](../04-networking/dns.md); [[04-networking/README#Routing|Routing]] · [Routing](../04-networking/README.md#routing)
+**Implements / applies:** [[04-networking/dns|DNS]] · [DNS](../04-networking/dns.md); [[04-networking/README#Routing|Routing]] · [Routing](../04-networking/README.md#routing); [[19-distributed-systems/README#Service Discovery|Service Discovery]] · [Service Discovery](../19-distributed-systems/README.md#service-discovery)
 
 <a id="kubernetes-services"></a>
 #### Kubernetes Services
@@ -168,4 +168,12 @@ flowchart TD
 
 ## Leads To
 
-[[11-aws/README#AWS EKS|AWS EKS]] · [AWS EKS](../11-aws/README.md#aws-eks); [[16-gitops/README#GitOps Principles|GitOps Principles]] · [GitOps Principles](../16-gitops/README.md#gitops-principles); [[16-gitops/README#Helm and Kustomize|Helm and Kustomize]] · [Helm and Kustomize](../16-gitops/README.md#helm-kustomize); [[16-gitops/README#GitOps Troubleshooting|GitOps Troubleshooting]] · [GitOps Troubleshooting](../16-gitops/README.md#gitops-troubleshooting); [[23-advanced/README#Platform Engineering|Platform Engineering]] · [Platform Engineering](../23-advanced/README.md#platform-engineering)
+[[11-aws/README#AWS EKS|AWS EKS]] · [AWS EKS](../11-aws/README.md#aws-eks); [[16-gitops/README#GitOps Principles|GitOps Principles]] · [GitOps Principles](../16-gitops/README.md#gitops-principles); [[16-gitops/README#Helm and Kustomize|Helm and Kustomize]] · [Helm and Kustomize](../16-gitops/README.md#helm-kustomize); [[16-gitops/README#GitOps Troubleshooting|GitOps Troubleshooting]] · [GitOps Troubleshooting](../16-gitops/README.md#gitops-troubleshooting); [[23-advanced/README#Platform Engineering|Platform Engineering]] · [Platform Engineering](../23-advanced/README.md#platform-engineering); [[23-advanced/README#Service Mesh|Service Mesh]] · [Service Mesh](../23-advanced/README.md#service-mesh)
+
+## Reference Roadmaps
+
+Use these for coverage and further exploration; the prerequisite relationships here are curated independently.
+
+- [roadmap.sh — DevOps](https://roadmap.sh/devops)
+
+[Reference review and scope decisions](../references/roadmap-sh.md)

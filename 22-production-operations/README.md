@@ -74,3 +74,11 @@ flowchart TD
 ## Leads To
 
 [[08-databases/README#Database Operations|Database Operations]] · [Database Operations](../08-databases/README.md#database-operations); [[14-kubernetes/README#Kubernetes Cluster Architecture and Operations|Kubernetes Cluster Architecture and Operations]] · [Kubernetes Cluster Architecture and Operations](../14-kubernetes/README.md#kubernetes-cluster-operations); [[20-sre/README#Resilience Engineering|Resilience Engineering]] · [Resilience Engineering](../20-sre/README.md#resilience-engineering)
+
+## Reference Roadmaps
+
+Use these for coverage and further exploration; the prerequisite relationships here are curated independently.
+
+- [roadmap.sh — DevOps](https://roadmap.sh/devops)
+
+[Reference review and scope decisions](../references/roadmap-sh.md)

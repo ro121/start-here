@@ -76,4 +76,12 @@ flowchart TD
 
 ## Leads To
 
-Specialize further according to real systems and learning needs.
+[[04-networking/README#Network Automation|Network Automation]] · [Network Automation](../04-networking/README.md#network-automation)
+
+## Reference Roadmaps
+
+Use these for coverage and further exploration; the prerequisite relationships here are curated independently.
+
+- [roadmap.sh — DevOps](https://roadmap.sh/devops)
+
+[Reference review and scope decisions](../references/roadmap-sh.md)

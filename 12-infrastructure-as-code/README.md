@@ -41,7 +41,7 @@ This is one dependency-compatible reading order. External prerequisites can be l
 <a id="infrastructure-as-code-principles"></a>
 #### Infrastructure as Code Principles
 
-**Concepts:** Resource graph; Planning; Change review; Lifecycle; Infrastructure ownership.
+**Concepts:** Resource graph; Planning; Change review; Lifecycle; Infrastructure ownership; CloudFormation; Pulumi; AWS CDK.
 
 **Prerequisites:** [[12-infrastructure-as-code/README#Desired State and Reconciliation|Desired State and Reconciliation]] · [Desired State and Reconciliation](README.md#desired-state); [[19-distributed-systems/README#Idempotency|Idempotency]] · [Idempotency](../19-distributed-systems/README.md#idempotency); [[10-cloud/README#Cloud Fundamentals|Cloud Fundamentals]] · [Cloud Fundamentals](../10-cloud/README.md#cloud-fundamentals); [[07-git/README#Git Fundamentals|Git Fundamentals]] · [Git Fundamentals](../07-git/README.md#git-fundamentals)
 
@@ -109,3 +109,11 @@ flowchart TD
 ## Leads To
 
 [[13-configuration-management/README#Configuration Management Principles|Configuration Management Principles]] · [Configuration Management Principles](../13-configuration-management/README.md#configuration-management-principles); [[14-kubernetes/README#Kubernetes Architecture|Kubernetes Architecture]] · [Kubernetes Architecture](../14-kubernetes/README.md#kubernetes-architecture); [[16-gitops/README#GitOps Principles|GitOps Principles]] · [GitOps Principles](../16-gitops/README.md#gitops-principles); [[18-security/README#Policy as Code|Policy as Code]] · [Policy as Code](../18-security/README.md#policy-as-code); [[23-advanced/README#Platform Engineering|Platform Engineering]] · [Platform Engineering](../23-advanced/README.md#platform-engineering)
+
+## Reference Roadmaps
+
+Use these for coverage and further exploration; the prerequisite relationships here are curated independently.
+
+- [roadmap.sh — DevOps](https://roadmap.sh/devops)
+
+[Reference review and scope decisions](../references/roadmap-sh.md)

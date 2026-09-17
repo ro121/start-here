@@ -21,6 +21,21 @@ curriculum:
       - Binary
       - Bits and bytes
       - Units and encodings
+      - Character encodings
+      - Unicode
+      - Bitwise operations
+    - id: discrete-math
+      title: Discrete Mathematics for Computing
+      order: 2
+      prerequisites:
+      - computer-fundamentals
+      concepts:
+      - Logic
+      - Sets
+      - Relations
+      - Combinatorics
+      - Probability
+      - Proof intuition
   - id: programming-basics-subject
     title: Programming Basics
     order: 2
@@ -49,6 +64,27 @@ curriculum:
       - Searching
       - Sorting
       - Complexity
+      - Stacks
+      - Queues
+      - Heaps
+      - Graphs
+      - Hash tables
+    - id: algorithm-analysis
+      title: Algorithm Analysis and Problem Solving
+      order: 3
+      prerequisites:
+      - data-structures-algorithms
+      - discrete-math
+      concepts:
+      - Asymptotic bounds
+      - Time and space tradeoffs
+      - Recursion
+      - Graph traversal
+      - Greedy methods
+      - Dynamic programming
+      - Complexity classes
+  references:
+  - roadmap-sh-computer-science
 - id: computer-systems
   title: Computer Systems
   order: 1
@@ -73,6 +109,9 @@ curriculum:
       - Memory
       - Storage
       - I/O
+      - Registers
+      - Endianness
+      - Floating-point representation
     - id: systems-performance
       title: Systems Performance
       order: 2
@@ -83,6 +122,8 @@ curriculum:
       - CPU bottlenecks
       - Memory bandwidth
       - Storage latency
+  references:
+  - roadmap-sh-computer-science
 - id: operating-systems
   title: Operating Systems
   order: 2
@@ -140,6 +181,8 @@ curriculum:
       - Deadlocks
       - Synchronization
       - Parallelism
+  references:
+  - roadmap-sh-computer-science
 - id: linux
   title: Linux
   order: 3
@@ -193,6 +236,8 @@ curriculum:
       - Pipes
       - Redirection
       - Exit codes
+      - Text manipulation
+      - Terminal editors
   - id: linux-operations-subject
     title: Runtime and Operations
     order: 2
@@ -250,6 +295,9 @@ curriculum:
       - Memory pressure
       - Disk exhaustion
       - Socket inspection
+  references:
+  - roadmap-sh-network-engineer
+  - roadmap-sh-devops
 - id: networking
   title: Networking
   order: 4
@@ -292,6 +340,19 @@ curriculum:
       - MAC addresses
       - Switching
       - ARP
+    - id: switching-vlans
+      title: Switching and VLANs
+      order: 4
+      prerequisites:
+      - ethernet
+      concepts:
+      - MAC learning
+      - Broadcast domains
+      - VLANs
+      - Trunks
+      - Loop prevention
+      - Spanning tree
+      - Link aggregation
   - id: network-addressing-subject
     title: Addressing and Routing
     order: 2
@@ -347,6 +408,18 @@ curriculum:
       - Destination NAT
       - Connection tracking
       - Port translation
+    - id: dynamic-routing
+      title: Dynamic Routing
+      order: 5
+      prerequisites:
+      - routing
+      concepts:
+      - Route advertisement
+      - Metrics
+      - Convergence
+      - OSPF
+      - BGP
+      - Routing policy
   - id: network-protocols-subject
     title: Transport and Application Protocols
     order: 3
@@ -431,6 +504,10 @@ curriculum:
       - Reverse proxy
       - L4 and L7 balancing
       - Health checks
+      - Web servers
+      - NGINX
+      - HAProxy
+      - Caddy
     - id: network-troubleshooting
       title: Network Troubleshooting
       order: 2
@@ -444,6 +521,41 @@ curriculum:
       - Packet capture
       - DNS failures
       - Connection timeouts
+      - ICMP
+      - ping
+      - traceroute
+      - Wireshark
+      - MTU diagnosis
+    - id: vpn-tunneling
+      title: Tunneling and VPNs
+      order: 3
+      prerequisites:
+      - routing
+      - tls
+      - network-security
+      concepts:
+      - Encapsulation
+      - Site-to-site access
+      - Remote access
+      - IPsec
+      - Tunnel MTU
+      - Route overlap
+    - id: network-automation
+      title: Network Automation
+      order: 4
+      prerequisites:
+      - routing
+      - python-automation
+      - configuration-management-principles
+      concepts:
+      - Device APIs
+      - Configuration validation
+      - NETCONF
+      - RESTCONF
+      - YANG
+      - Configuration backup
+  references:
+  - roadmap-sh-network-engineer
 - id: programming
   title: Programming and Scripting
   order: 5
@@ -470,6 +582,14 @@ curriculum:
       - Exceptions
       - Environments
       - API clients
+      - pathlib
+      - subprocess
+      - argparse
+      - Regular expressions
+      related:
+      - python-language
+      - python-quality
+      - python-concurrency
     - id: shell-automation
       title: Shell Automation
       order: 2
@@ -481,6 +601,32 @@ curriculum:
       - Exit handling
       - Script interfaces
       - Safe retries
+    - id: programming-paradigms
+      title: Programming Paradigms
+      order: 3
+      prerequisites:
+      - programming-fundamentals
+      concepts:
+      - Procedural decomposition
+      - Object-oriented modeling
+      - Composition
+      - Functional transformations
+      - Mutable and immutable state
+    - id: python-language
+      title: Python Language Mechanics
+      order: 4
+      prerequisites:
+      - python-automation
+      - programming-paradigms
+      concepts:
+      - Scope
+      - Collections
+      - Comprehensions
+      - Classes
+      - Iterators
+      - Generators
+      - Decorators
+      - Context managers
   - id: program-runtime-subject
     title: Program Runtime
     order: 2
@@ -496,6 +642,11 @@ curriculum:
       - Lockfiles
       - Packaging
       - Distribution
+      - Virtual environments
+      - Package indexes
+      - pip
+      - uv
+      - Lockfile reproducibility
     - id: network-programming
       title: Network Programming
       order: 2
@@ -507,6 +658,42 @@ curriculum:
       - HTTP clients
       - Timeouts
       - Serialization
+    - id: python-concurrency
+      title: Python Concurrency
+      order: 3
+      prerequisites:
+      - python-language
+      - concurrency
+      concepts:
+      - Threads
+      - Processes
+      - Async I/O
+      - Cancellation
+      - Runtime and GIL considerations
+      - CPU-bound and I/O-bound work
+      implements:
+      - concurrency
+    - id: python-quality
+      title: Python Testing and Tooling
+      order: 4
+      prerequisites:
+      - python-language
+      - software-testing
+      - program-dependencies
+      concepts:
+      - Type annotations
+      - Static analysis
+      - Formatting
+      - pytest
+      - unittest
+      - Fixtures
+      - Test isolation
+      - pyproject.toml
+      implements:
+      - software-testing
+      - program-dependencies
+  references:
+  - roadmap-sh-python
 - id: software-engineering
   title: Software Engineering
   order: 6
@@ -541,6 +728,9 @@ curriculum:
       - Coupling
       - SOLID
       - Interface design
+      - Design patterns
+      - Dependency injection
+      - Architecture diagrams
     - id: api-design
       title: API Design
       order: 3
@@ -555,6 +745,10 @@ curriculum:
       - Authentication
       - Authorization
       - Error handling
+      - RPC
+      - gRPC
+      - GraphQL
+      - Interface tradeoffs
   - id: software-quality-subject
     title: Quality and Distribution
     order: 2
@@ -578,6 +772,8 @@ curriculum:
       - Structured logging
       - Error context
       - Correlation identifiers
+  references:
+  - roadmap-sh-python
 - id: git
   title: Git and Version Control
   order: 7
@@ -660,6 +856,9 @@ curriculum:
       - Relationships
       - Keys
       - Relational and document models
+      - Normalization
+      - Denormalization
+      - Key-value and wide-column models
     - id: sql-indexes
       title: SQL and Indexes
       order: 2
@@ -696,6 +895,8 @@ curriculum:
       - Connection pools
       - Backup consistency
       - Restore verification
+  references:
+  - roadmap-sh-computer-science
 - id: containers
   title: Virtualization and Containers
   order: 9
@@ -788,6 +989,8 @@ curriculum:
       - Resource limits
       - Image failures
       - Connectivity failures
+  references:
+  - roadmap-sh-devops
 - id: cloud
   title: Cloud Computing
   order: 10
@@ -827,6 +1030,24 @@ curriculum:
       - High availability
       - Failure domains
       - Managed services
+      - Architecture review
+      - Well-Architected tradeoffs
+    - id: serverless-computing
+      title: Serverless Computing
+      order: 3
+      prerequisites:
+      - cloud-fundamentals
+      - programming-fundamentals
+      concepts:
+      - Managed execution
+      - Event triggers
+      - Cold starts
+      - Concurrency limits
+      - Execution constraints
+      - Operational ownership
+      related:
+      - messaging
+      - resilient-communication
   - id: cloud-governance-subject
     title: Governance and Economics
     order: 2
@@ -844,6 +1065,9 @@ curriculum:
       - Cost allocation
       - Budgets
       - Cloud security
+  references:
+  - roadmap-sh-aws
+  - roadmap-sh-devops
 - id: aws
   title: AWS
   order: 11
@@ -908,6 +1132,14 @@ curriculum:
       - EBS
       - Auto Scaling
       - Lambda
+      - Quotas
+      - Instance purchase models
+      - User data
+      - Launch templates
+      related:
+      - serverless-computing
+      - aws-serverless-edge
+      - aws-managed-containers
     - id: aws-data
       title: AWS Data Services
       order: 2
@@ -921,6 +1153,13 @@ curriculum:
       - DynamoDB
       - Durability
       - Access patterns
+      - S3 lifecycle
+      - Storage classes
+      - DynamoDB indexes
+      - ElastiCache
+      implements:
+      - data-modeling
+      - caching
     - id: aws-traffic
       title: AWS Traffic and DNS
       order: 3
@@ -948,6 +1187,42 @@ curriculum:
       - Delivery semantics
       - Dead-letter queues
       implements:
+      - messaging
+    - id: aws-managed-containers
+      title: AWS Managed Container Deployment
+      order: 5
+      prerequisites:
+      - container-images
+      - aws-vpc
+      - aws-iam
+      concepts:
+      - ECR
+      - ECS
+      - Task definitions
+      - Services
+      - Fargate
+      - Capacity and access boundaries
+      implements:
+      - container-fundamentals
+      - artifact-management
+    - id: aws-serverless-edge
+      title: AWS Serverless and Edge Delivery
+      order: 6
+      prerequisites:
+      - serverless-computing
+      - content-delivery
+      - aws-iam
+      - messaging
+      concepts:
+      - Lambda
+      - API Gateway
+      - EventBridge
+      - CloudFront
+      - Origin access
+      - Cache invalidation
+      implements:
+      - serverless-computing
+      - content-delivery
       - messaging
   - id: aws-operations-subject
     title: Operations and Managed Kubernetes
@@ -981,6 +1256,8 @@ curriculum:
       - Network integration
       - Access
       - Upgrades
+  references:
+  - roadmap-sh-aws
 - id: infrastructure-as-code
   title: Infrastructure as Code
   order: 12
@@ -1020,6 +1297,9 @@ curriculum:
       - Change review
       - Lifecycle
       - Infrastructure ownership
+      - CloudFormation
+      - Pulumi
+      - AWS CDK
   - id: terraform-implementation-subject
     title: Terraform Implementation
     order: 2
@@ -1082,6 +1362,8 @@ curriculum:
       - Policy
       - Terraform CI/CD
       - Integration testing
+  references:
+  - roadmap-sh-devops
 - id: configuration-management
   title: Configuration Management
   order: 13
@@ -1142,6 +1424,8 @@ curriculum:
       - Idempotence tests
       - Check mode limitations
       - Integration environments
+  references:
+  - roadmap-sh-devops
 - id: kubernetes
   title: Kubernetes and Container Orchestration
   order: 14
@@ -1218,6 +1502,7 @@ curriculum:
       implements:
       - dns
       - routing
+      - service-discovery
     - id: kubernetes-services
       title: Kubernetes Services
       order: 2
@@ -1352,6 +1637,8 @@ curriculum:
       - Backup
       - Node maintenance
       - Production operations
+  references:
+  - roadmap-sh-devops
 - id: ci-cd
   title: CI-CD
   order: 15
@@ -1423,6 +1710,8 @@ curriculum:
       - Permissions
       - Provenance
       - Untrusted contributions
+  references:
+  - roadmap-sh-devops
 - id: gitops
   title: GitOps
   order: 16
@@ -1451,6 +1740,7 @@ curriculum:
       - Reconciliation
       - Drift
       - Ownership
+      - Flux as an alternative controller
     - id: helm-kustomize
       title: Helm and Kustomize
       order: 2
@@ -1495,6 +1785,8 @@ curriculum:
       - Sync failures
       - Health checks
       - Competing controllers
+  references:
+  - roadmap-sh-devops
 - id: observability
   title: Observability
   order: 17
@@ -1519,6 +1811,11 @@ curriculum:
       - Traces
       - Signal context
       - Instrumentation
+      - Log aggregation
+      - Trace storage
+      - Loki
+      - Elastic Stack
+      - Jaeger
     - id: opentelemetry
       title: OpenTelemetry
       order: 2
@@ -1562,6 +1859,8 @@ curriculum:
       - Symptoms
       - Correlation
       - Investigation queries
+  references:
+  - roadmap-sh-devops
 - id: security
   title: Security
   order: 18
@@ -1676,6 +1975,8 @@ curriculum:
       - OPA
       - Gatekeeper
       - Audit and enforcement
+  references:
+  - roadmap-sh-devops
 - id: distributed-systems
   title: Distributed Systems
   order: 19
@@ -1779,6 +2080,35 @@ curriculum:
       - Sagas
       - Outbox
       - Compensation
+    - id: service-discovery
+      title: Service Discovery
+      order: 5
+      prerequisites:
+      - dns
+      - distributed-fundamentals
+      concepts:
+      - Naming and registration
+      - Endpoint freshness
+      - Health
+      - Client-side discovery
+      - Server-side discovery
+      related:
+      - kubernetes-services
+    - id: overload-protection
+      title: Overload Protection
+      order: 6
+      prerequisites:
+      - resilient-communication
+      - capacity-performance
+      concepts:
+      - Backpressure
+      - Admission control
+      - Rate limiting
+      - Load shedding
+      - Bulkheads
+      - Retry amplification
+  references:
+  - roadmap-sh-system-design
 - id: sre
   title: Site Reliability Engineering
   order: 20
@@ -1845,6 +2175,8 @@ curriculum:
       - Hypotheses
       - Blast radius
       - Recovery verification
+  references:
+  - roadmap-sh-system-design
 - id: system-design
   title: System Design
   order: 21
@@ -1911,6 +2243,40 @@ curriculum:
       - Replication
       - Consistency
       - Failure modes
+    - id: content-delivery
+      title: Content Delivery and Edge Caching
+      order: 3
+      prerequisites:
+      - caching
+      - http
+      - dns
+      concepts:
+      - Origin and edge
+      - Cache keys
+      - Invalidation
+      - TTL
+      - Static content
+      - Regional delivery
+      related:
+      - aws-traffic
+    - id: architecture-evolution
+      title: Architecture Evolution
+      order: 4
+      prerequisites:
+      - system-design-method
+      - messaging
+      - database-transactions
+      concepts:
+      - Modular monoliths
+      - Microservice boundaries
+      - Strangler migration
+      - CQRS
+      - Event sourcing
+      - Distributed complexity
+      related:
+      - distributed-transactions
+  references:
+  - roadmap-sh-system-design
 - id: production-operations
   title: Production Operations
   order: 22
@@ -1967,6 +2333,8 @@ curriculum:
       - Mitigation
       - RCA
       - Blameless learning
+  references:
+  - roadmap-sh-devops
 - id: advanced
   title: Advanced and Specialization
   order: 23
@@ -2006,3 +2374,49 @@ curriculum:
       - Profiling
       - Workload characterization
       - Cross-layer bottlenecks
+    - id: service-mesh
+      title: Service Mesh
+      order: 3
+      prerequisites:
+      - kubernetes-networking
+      - service-discovery
+      - tls
+      - identity-access
+      - telemetry
+      concepts:
+      - Service-to-service traffic policy
+      - Workload identity
+      - Mutual TLS
+      - Traffic telemetry
+      - Istio
+      - Linkerd
+      - Operational cost
+      related:
+      - overload-protection
+  references:
+  - roadmap-sh-devops
+references:
+- id: roadmap-sh-computer-science
+  title: roadmap.sh — Computer Science
+  url: https://roadmap.sh/computer-science
+  content_inventory: https://github.com/nilbuild/developer-roadmap/tree/253079f3b0a317ba68b83dd9b4e7f88b2cbe2cc9/roadmaps/computer-science/content
+- id: roadmap-sh-system-design
+  title: roadmap.sh — System Design
+  url: https://roadmap.sh/system-design
+  content_inventory: https://github.com/nilbuild/developer-roadmap/tree/253079f3b0a317ba68b83dd9b4e7f88b2cbe2cc9/roadmaps/system-design/content
+- id: roadmap-sh-aws
+  title: roadmap.sh — AWS
+  url: https://roadmap.sh/aws
+  content_inventory: https://github.com/nilbuild/developer-roadmap/tree/253079f3b0a317ba68b83dd9b4e7f88b2cbe2cc9/roadmaps/aws/content
+- id: roadmap-sh-python
+  title: roadmap.sh — Python
+  url: https://roadmap.sh/python
+  content_inventory: https://github.com/nilbuild/developer-roadmap/tree/253079f3b0a317ba68b83dd9b4e7f88b2cbe2cc9/roadmaps/python/content
+- id: roadmap-sh-network-engineer
+  title: roadmap.sh — Network Engineer
+  url: https://roadmap.sh/network-engineer
+  content_inventory: https://github.com/nilbuild/developer-roadmap/tree/253079f3b0a317ba68b83dd9b4e7f88b2cbe2cc9/roadmaps/network-engineer/content
+- id: roadmap-sh-devops
+  title: roadmap.sh — DevOps
+  url: https://roadmap.sh/devops
+  content_inventory: https://github.com/nilbuild/developer-roadmap/tree/253079f3b0a317ba68b83dd9b4e7f88b2cbe2cc9/roadmaps/devops/content

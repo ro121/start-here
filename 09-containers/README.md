@@ -100,4 +100,12 @@ flowchart TD
 
 ## Leads To
 
-[[10-cloud/README#Cloud Fundamentals|Cloud Fundamentals]] · [Cloud Fundamentals](../10-cloud/README.md#cloud-fundamentals); [[11-aws/README#AWS Compute|AWS Compute]] · [AWS Compute](../11-aws/README.md#aws-compute); [[14-kubernetes/README#Kubernetes Architecture|Kubernetes Architecture]] · [Kubernetes Architecture](../14-kubernetes/README.md#kubernetes-architecture); [[14-kubernetes/README#Kubernetes Pods and Workloads|Kubernetes Pods and Workloads]] · [Kubernetes Pods and Workloads](../14-kubernetes/README.md#kubernetes-pods); [[14-kubernetes/README#Kubernetes Storage|Kubernetes Storage]] · [Kubernetes Storage](../14-kubernetes/README.md#kubernetes-storage); [[15-ci-cd/README#Artifact Management|Artifact Management]] · [Artifact Management](../15-ci-cd/README.md#artifact-management); [[18-security/README#Container Security|Container Security]] · [Container Security](../18-security/README.md#container-security)
+[[10-cloud/README#Cloud Fundamentals|Cloud Fundamentals]] · [Cloud Fundamentals](../10-cloud/README.md#cloud-fundamentals); [[11-aws/README#AWS Compute|AWS Compute]] · [AWS Compute](../11-aws/README.md#aws-compute); [[11-aws/README#AWS Managed Container Deployment|AWS Managed Container Deployment]] · [AWS Managed Container Deployment](../11-aws/README.md#aws-managed-containers); [[14-kubernetes/README#Kubernetes Architecture|Kubernetes Architecture]] · [Kubernetes Architecture](../14-kubernetes/README.md#kubernetes-architecture); [[14-kubernetes/README#Kubernetes Pods and Workloads|Kubernetes Pods and Workloads]] · [Kubernetes Pods and Workloads](../14-kubernetes/README.md#kubernetes-pods); [[14-kubernetes/README#Kubernetes Storage|Kubernetes Storage]] · [Kubernetes Storage](../14-kubernetes/README.md#kubernetes-storage); [[15-ci-cd/README#Artifact Management|Artifact Management]] · [Artifact Management](../15-ci-cd/README.md#artifact-management); [[18-security/README#Container Security|Container Security]] · [Container Security](../18-security/README.md#container-security)
+
+## Reference Roadmaps
+
+Use these for coverage and further exploration; the prerequisite relationships here are curated independently.
+
+- [roadmap.sh — DevOps](https://roadmap.sh/devops)
+
+[Reference review and scope decisions](../references/roadmap-sh.md)

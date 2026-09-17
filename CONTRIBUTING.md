@@ -14,10 +14,14 @@
 | Topic `note` | Optional repository-relative path to an authored note |
 | Topic `implements` | Canonical concepts this topic implements or applies |
 | Topic `related` | Connections without prerequisite semantics |
+| Root `references` | Reference records with `id`, `title`, `url`, and optional pinned `content_inventory` |
+| Domain `references` | Reference IDs displayed in the domain map |
 
 Prerequisites refer to topic IDs only, avoiding ambiguity about whether an entire domain must be mastered. Empty lists mark entry concepts. Do not infer edges from folder order or containment. `order` expresses editorial preference; the generator uses a topological sort with that preference to suggest a reading order. Domain reading lists filter that global ordering, so external prerequisites still require attention.
 
 `dependencies.yaml` is a derived edge list: scalar `from` is the prerequisite, scalar `to` is the dependent. Multiple prerequisites become multiple edges, all required at an appropriate introductory depth. Related and implementation links are deliberately excluded. No second copy of the graph is edited manually.
+
+External references inform coverage but do not define prerequisites automatically. See the [roadmap.sh review](references/roadmap-sh.md) for the six initial sources, the inspected snapshot, and scope decisions. Keep reference IDs unique and use only registered IDs in domain assignments.
 
 Phase groupings in the renderer are navigation aids, not learning gates. For example, introductory identity precedes Linux permissions even though Security has a later folder number. The SRE map houses canonical reliability objectives; observability and operations refer to them.
 

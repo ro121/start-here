@@ -84,4 +84,12 @@ flowchart TD
 
 ## Leads To
 
-[[10-cloud/README#Cloud Architecture|Cloud Architecture]] · [Cloud Architecture](../10-cloud/README.md#cloud-architecture); [[17-observability/README#Alerting and Incident Investigation|Alerting and Incident Investigation]] · [Alerting and Incident Investigation](../17-observability/README.md#alerting-investigation); [[21-system-design/README#System Design Method|System Design Method]] · [System Design Method](../21-system-design/README.md#system-design-method); [[22-production-operations/README#Operational Readiness|Operational Readiness]] · [Operational Readiness](../22-production-operations/README.md#operational-readiness); [[22-production-operations/README#Backup and Disaster Recovery|Backup and Disaster Recovery]] · [Backup and Disaster Recovery](../22-production-operations/README.md#backup-recovery); [[23-advanced/README#Systems Performance Specialization|Systems Performance Specialization]] · [Systems Performance Specialization](../23-advanced/README.md#performance-specialization)
+[[10-cloud/README#Cloud Architecture|Cloud Architecture]] · [Cloud Architecture](../10-cloud/README.md#cloud-architecture); [[17-observability/README#Alerting and Incident Investigation|Alerting and Incident Investigation]] · [Alerting and Incident Investigation](../17-observability/README.md#alerting-investigation); [[19-distributed-systems/README#Overload Protection|Overload Protection]] · [Overload Protection](../19-distributed-systems/README.md#overload-protection); [[21-system-design/README#System Design Method|System Design Method]] · [System Design Method](../21-system-design/README.md#system-design-method); [[22-production-operations/README#Operational Readiness|Operational Readiness]] · [Operational Readiness](../22-production-operations/README.md#operational-readiness); [[22-production-operations/README#Backup and Disaster Recovery|Backup and Disaster Recovery]] · [Backup and Disaster Recovery](../22-production-operations/README.md#backup-recovery); [[23-advanced/README#Systems Performance Specialization|Systems Performance Specialization]] · [Systems Performance Specialization](../23-advanced/README.md#performance-specialization)
+
+## Reference Roadmaps
+
+Use these for coverage and further exploration; the prerequisite relationships here are curated independently.
+
+- [roadmap.sh — System Design](https://roadmap.sh/system-design)
+
+[Reference review and scope decisions](../references/roadmap-sh.md)

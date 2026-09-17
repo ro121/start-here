@@ -64,6 +64,8 @@ DNS resolution is not an HTTP redirect and does not test endpoint health. DNS-ba
 - [[04-networking/README#Network Troubleshooting|Network Troubleshooting]] · [Network Troubleshooting](README.md#network-troubleshooting)
 - [[11-aws/README#AWS Traffic and DNS|AWS Traffic and DNS]] · [AWS Traffic and DNS](../11-aws/README.md#aws-traffic)
 - [[14-kubernetes/README#Kubernetes Networking|Kubernetes Networking]] · [Kubernetes Networking](../14-kubernetes/README.md#kubernetes-networking)
+- [[21-system-design/README#Content Delivery and Edge Caching|Content Delivery and Edge Caching]] · [Content Delivery and Edge Caching](../21-system-design/README.md#content-delivery)
+- [[19-distributed-systems/README#Service Discovery|Service Discovery]] · [Service Discovery](../19-distributed-systems/README.md#service-discovery)
 
 ## Technology Implementations
 

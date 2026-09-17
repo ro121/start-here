@@ -30,7 +30,7 @@ This is one dependency-compatible reading order. External prerequisites can be l
 <a id="gitops-principles"></a>
 #### GitOps Principles
 
-**Concepts:** Versioned desired state; Pull-based delivery; Reconciliation; Drift; Ownership.
+**Concepts:** Versioned desired state; Pull-based delivery; Reconciliation; Drift; Ownership; Flux as an alternative controller.
 
 **Prerequisites:** [[12-infrastructure-as-code/README#Desired State and Reconciliation|Desired State and Reconciliation]] · [Desired State and Reconciliation](../12-infrastructure-as-code/README.md#desired-state); [[07-git/README#Git Workflows|Git Workflows]] · [Git Workflows](../07-git/README.md#git-workflows); [[14-kubernetes/README#Kubernetes Objects and Access|Kubernetes Objects and Access]] · [Kubernetes Objects and Access](../14-kubernetes/README.md#kubernetes-objects)
 
@@ -85,3 +85,11 @@ flowchart TD
 ## Leads To
 
 [[23-advanced/README#Platform Engineering|Platform Engineering]] · [Platform Engineering](../23-advanced/README.md#platform-engineering)
+
+## Reference Roadmaps
+
+Use these for coverage and further exploration; the prerequisite relationships here are curated independently.
+
+- [roadmap.sh — DevOps](https://roadmap.sh/devops)
+
+[Reference review and scope decisions](../references/roadmap-sh.md)

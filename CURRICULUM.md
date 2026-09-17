@@ -14,12 +14,14 @@ Build the vocabulary and reasoning skills used throughout computing.
 
 #### Computing Literacy
 
-- [Computer Fundamentals](00-foundations/README.md#computer-fundamentals) — Hardware and software; Input and output; Binary; Bits and bytes; Units and encodings.
+- [Computer Fundamentals](00-foundations/README.md#computer-fundamentals) — Hardware and software; Input and output; Binary; Bits and bytes; Units and encodings; Character encodings; Unicode; Bitwise operations.
+- [Discrete Mathematics for Computing](00-foundations/README.md#discrete-math) — Logic; Sets; Relations; Combinatorics; Probability; Proof intuition.
 
 #### Programming Basics
 
 - [Programming Fundamentals](00-foundations/README.md#programming-fundamentals) — Variables; Data types; Control flow; Functions; Error handling.
-- [Data Structures and Algorithms](00-foundations/README.md#data-structures-algorithms) — Arrays; Lists; Maps; Trees; Searching; Sorting; Complexity.
+- [Data Structures and Algorithms](00-foundations/README.md#data-structures-algorithms) — Arrays; Lists; Maps; Trees; Searching; Sorting; Complexity; Stacks; Queues; Heaps; Graphs; Hash tables.
+- [Algorithm Analysis and Problem Solving](00-foundations/README.md#algorithm-analysis) — Asymptotic bounds; Time and space tradeoffs; Recursion; Graph traversal; Greedy methods; Dynamic programming; Complexity classes.
 
 ### [Computer Systems](01-computer-systems/README.md)
 
@@ -27,7 +29,7 @@ Understand how hardware executes programs and where resource limits arise.
 
 #### Hardware and Execution
 
-- [Computer Architecture](01-computer-systems/README.md#computer-architecture) — CPU; Instruction execution; Caches; Memory; Storage; I/O.
+- [Computer Architecture](01-computer-systems/README.md#computer-architecture) — CPU; Instruction execution; Caches; Memory; Storage; I/O; Registers; Endianness; Floating-point representation.
 - [Systems Performance](01-computer-systems/README.md#systems-performance) — Locality; CPU bottlenecks; Memory bandwidth; Storage latency.
 
 ### [Operating Systems](02-operating-systems/README.md)
@@ -51,7 +53,7 @@ Operate Linux systems and diagnose their behavior using operating system concept
 
 - [Linux Filesystem](03-linux/README.md#linux-filesystem) — Files; Directories; Inodes; Mounts; Paths; Package management.
 - [Linux Users and Permissions](03-linux/README.md#linux-users-permissions) — Users; Groups; Ownership; Mode bits; sudo; ACLs.
-- [Linux Shell](03-linux/README.md#linux-shell) — Shell; Bash; Environment variables; Pipes; Redirection; Exit codes.
+- [Linux Shell](03-linux/README.md#linux-shell) — Shell; Bash; Environment variables; Pipes; Redirection; Exit codes; Text manipulation; Terminal editors.
 
 #### Runtime and Operations
 
@@ -69,6 +71,7 @@ Understand communication from local links through application protocols and traf
 - [OSI Model](04-networking/README.md#osi-model) — Layers; Encapsulation; Model limitations.
 - [TCP-IP Model](04-networking/README.md#tcp-ip) — Link layer; Internet layer; Transport layer; Application layer.
 - [Ethernet](04-networking/README.md#ethernet) — Frames; MAC addresses; Switching; ARP.
+- [Switching and VLANs](04-networking/README.md#switching-vlans) — MAC learning; Broadcast domains; VLANs; Trunks; Loop prevention; Spanning tree; Link aggregation.
 
 #### Addressing and Routing
 
@@ -76,6 +79,7 @@ Understand communication from local links through application protocols and traf
 - [Subnetting](04-networking/subnetting.md) — CIDR; Prefixes; Subnet boundaries; IPv4 and IPv6 allocation.
 - [Routing](04-networking/README.md#routing) — Route lookup; Longest-prefix match; Default gateways; Route tables.
 - [NAT](04-networking/README.md#nat) — Source NAT; Destination NAT; Connection tracking; Port translation.
+- [Dynamic Routing](04-networking/README.md#dynamic-routing) — Route advertisement; Metrics; Convergence; OSPF; BGP; Routing policy.
 
 #### Transport and Application Protocols
 
@@ -87,8 +91,10 @@ Understand communication from local links through application protocols and traf
 
 #### Traffic Management and Diagnosis
 
-- [Proxies and Load Balancing](04-networking/README.md#proxies-load-balancing) — Forward proxy; Reverse proxy; L4 and L7 balancing; Health checks.
-- [Network Troubleshooting](04-networking/README.md#network-troubleshooting) — Layered diagnosis; Packet capture; DNS failures; Connection timeouts.
+- [Proxies and Load Balancing](04-networking/README.md#proxies-load-balancing) — Forward proxy; Reverse proxy; L4 and L7 balancing; Health checks; Web servers; NGINX; HAProxy; Caddy.
+- [Network Troubleshooting](04-networking/README.md#network-troubleshooting) — Layered diagnosis; Packet capture; DNS failures; Connection timeouts; ICMP; ping; traceroute; Wireshark; MTU diagnosis.
+- [Tunneling and VPNs](04-networking/README.md#vpn-tunneling) — Encapsulation; Site-to-site access; Remote access; IPsec; Tunnel MTU; Route overlap.
+- [Network Automation](04-networking/README.md#network-automation) — Device APIs; Configuration validation; NETCONF; RESTCONF; YANG; Configuration backup.
 
 ## Phase 2 — Software and Automation
 
@@ -98,13 +104,17 @@ Turn programming fundamentals into reliable automation and maintainable programs
 
 #### Automation Languages
 
-- [Python Automation](05-programming/README.md#python-automation) — Functions and modules; File I/O; Exceptions; Environments; API clients.
+- [Python Automation](05-programming/README.md#python-automation) — Functions and modules; File I/O; Exceptions; Environments; API clients; pathlib; subprocess; argparse; Regular expressions.
 - [Shell Automation](05-programming/README.md#shell-automation) — Quoting; Pipelines; Exit handling; Script interfaces; Safe retries.
+- [Programming Paradigms](05-programming/README.md#programming-paradigms) — Procedural decomposition; Object-oriented modeling; Composition; Functional transformations; Mutable and immutable state.
+- [Python Language Mechanics](05-programming/README.md#python-language) — Scope; Collections; Comprehensions; Classes; Iterators; Generators; Decorators; Context managers.
 
 #### Program Runtime
 
-- [Program Dependencies and Packaging](05-programming/README.md#program-dependencies) — Libraries; Dependency resolution; Lockfiles; Packaging; Distribution.
+- [Program Dependencies and Packaging](05-programming/README.md#program-dependencies) — Libraries; Dependency resolution; Lockfiles; Packaging; Distribution; Virtual environments; Package indexes; pip; uv; Lockfile reproducibility.
 - [Network Programming](05-programming/README.md#network-programming) — Sockets; HTTP clients; Timeouts; Serialization.
+- [Python Concurrency](05-programming/README.md#python-concurrency) — Threads; Processes; Async I/O; Cancellation; Runtime and GIL considerations; CPU-bound and I/O-bound work.
+- [Python Testing and Tooling](05-programming/README.md#python-quality) — Type annotations; Static analysis; Formatting; pytest; unittest; Fixtures; Test isolation; pyproject.toml.
 
 ### [Software Engineering](06-software-engineering/README.md)
 
@@ -113,8 +123,8 @@ Design, test, and evolve software with explicit interfaces and maintainability.
 #### Design and Delivery Foundations
 
 - [Software Lifecycle and Requirements](06-software-engineering/README.md#software-lifecycle) — SDLC; Requirements; Feedback; Change management.
-- [Software Design Principles](06-software-engineering/README.md#software-design) — Architecture; Cohesion; Coupling; SOLID; Interface design.
-- [API Design](06-software-engineering/README.md#api-design) — REST; Contracts; Versioning; Authentication; Authorization; Error handling.
+- [Software Design Principles](06-software-engineering/README.md#software-design) — Architecture; Cohesion; Coupling; SOLID; Interface design; Design patterns; Dependency injection; Architecture diagrams.
+- [API Design](06-software-engineering/README.md#api-design) — REST; Contracts; Versioning; Authentication; Authorization; Error handling; RPC; gRPC; GraphQL; Interface tradeoffs.
 
 #### Quality and Distribution
 
@@ -141,7 +151,7 @@ Model, persist, query, and recover data with explicit integrity guarantees.
 
 #### Models and Queries
 
-- [Data Modeling](08-databases/README.md#data-modeling) — Entities; Relationships; Keys; Relational and document models.
+- [Data Modeling](08-databases/README.md#data-modeling) — Entities; Relationships; Keys; Relational and document models; Normalization; Denormalization; Key-value and wide-column models.
 - [SQL and Indexes](08-databases/README.md#sql-indexes) — Queries; Joins; Index structures; Query plans.
 
 #### Integrity and Operations
@@ -174,7 +184,8 @@ Understand cloud service models, failure boundaries, and resource economics.
 #### Service and Resource Models
 
 - [Cloud Fundamentals](10-cloud/README.md#cloud-fundamentals) — Service models; Regions; Availability zones; Shared responsibility; Compute; Storage; Networking; Managed databases.
-- [Cloud Architecture](10-cloud/README.md#cloud-architecture) — Scalability; High availability; Failure domains; Managed services.
+- [Cloud Architecture](10-cloud/README.md#cloud-architecture) — Scalability; High availability; Failure domains; Managed services; Architecture review; Well-Architected tradeoffs.
+- [Serverless Computing](10-cloud/README.md#serverless-computing) — Managed execution; Event triggers; Cold starts; Concurrency limits; Execution constraints; Operational ownership.
 
 #### Governance and Economics
 
@@ -191,10 +202,12 @@ Map transferable cloud concepts onto AWS service boundaries and operational choi
 
 #### Compute Data and Traffic
 
-- [AWS Compute](11-aws/README.md#aws-compute) — EC2; AMIs; EBS; Auto Scaling; Lambda.
-- [AWS Data Services](11-aws/README.md#aws-data) — S3; RDS; DynamoDB; Durability; Access patterns.
+- [AWS Compute](11-aws/README.md#aws-compute) — EC2; AMIs; EBS; Auto Scaling; Lambda; Quotas; Instance purchase models; User data; Launch templates.
+- [AWS Data Services](11-aws/README.md#aws-data) — S3; RDS; DynamoDB; Durability; Access patterns; S3 lifecycle; Storage classes; DynamoDB indexes; ElastiCache.
 - [AWS Traffic and DNS](11-aws/README.md#aws-traffic) — ALB; NLB; Route 53; Routing policies.
 - [AWS Messaging](11-aws/README.md#aws-messaging) — SQS; SNS; Delivery semantics; Dead-letter queues.
+- [AWS Managed Container Deployment](11-aws/README.md#aws-managed-containers) — ECR; ECS; Task definitions; Services; Fargate; Capacity and access boundaries.
+- [AWS Serverless and Edge Delivery](11-aws/README.md#aws-serverless-edge) — Lambda; API Gateway; EventBridge; CloudFront; Origin access; Cache invalidation.
 
 #### Operations and Managed Kubernetes
 
@@ -208,7 +221,7 @@ Describe desired infrastructure and manage changes, state, dependencies, and dri
 #### Conceptual Foundations
 
 - [Desired State and Reconciliation](12-infrastructure-as-code/README.md#desired-state) — Declarative configuration; Observed state; Reconciliation; Drift.
-- [Infrastructure as Code Principles](12-infrastructure-as-code/README.md#infrastructure-as-code-principles) — Resource graph; Planning; Change review; Lifecycle; Infrastructure ownership.
+- [Infrastructure as Code Principles](12-infrastructure-as-code/README.md#infrastructure-as-code-principles) — Resource graph; Planning; Change review; Lifecycle; Infrastructure ownership; CloudFormation; Pulumi; AWS CDK.
 
 #### Terraform Implementation
 
@@ -281,7 +294,7 @@ Apply versioned desired state through reconciliation with clear ownership and re
 
 #### Principles and Configuration
 
-- [GitOps Principles](16-gitops/README.md#gitops-principles) — Versioned desired state; Pull-based delivery; Reconciliation; Drift; Ownership.
+- [GitOps Principles](16-gitops/README.md#gitops-principles) — Versioned desired state; Pull-based delivery; Reconciliation; Drift; Ownership; Flux as an alternative controller.
 - [Helm and Kustomize](16-gitops/README.md#helm-kustomize) — Charts; Values; Templates; Bases; Overlays; Rendered configuration.
 
 #### Controllers and Diagnosis
@@ -297,7 +310,7 @@ Use telemetry to explain system behavior and support actionable diagnosis.
 
 #### Signals and Instrumentation
 
-- [Telemetry and Observability](17-observability/README.md#telemetry) — Monitoring; Metrics; Logs; Traces; Signal context; Instrumentation.
+- [Telemetry and Observability](17-observability/README.md#telemetry) — Monitoring; Metrics; Logs; Traces; Signal context; Instrumentation; Log aggregation; Trace storage; Loki; Elastic Stack; Jaeger.
 - [OpenTelemetry](17-observability/README.md#opentelemetry) — Instrumentation; Context propagation; Collectors; Exporters.
 
 #### Monitoring and Investigation
@@ -339,6 +352,8 @@ Reason about partial failure, state coordination, and communication between inde
 - [Idempotency](19-distributed-systems/README.md#idempotency) — Repeated operations; Stable effects; Deduplication keys; Safe automation.
 - [Resilient Communication](19-distributed-systems/README.md#resilient-communication) — Timeouts; Retries; Backoff; Jitter; Circuit breakers.
 - [Distributed Transactions](19-distributed-systems/README.md#distributed-transactions) — Atomic commit; Sagas; Outbox; Compensation.
+- [Service Discovery](19-distributed-systems/README.md#service-discovery) — Naming and registration; Endpoint freshness; Health; Client-side discovery; Server-side discovery.
+- [Overload Protection](19-distributed-systems/README.md#overload-protection) — Backpressure; Admission control; Rate limiting; Load shedding; Bulkheads; Retry amplification.
 
 ### [Site Reliability Engineering](20-sre/README.md)
 
@@ -366,6 +381,8 @@ Combine concepts into architectures with explicit requirements and tradeoffs.
 
 - [Caching](21-system-design/README.md#caching) — Cache keys; Invalidation; TTL; Eviction; Stampedes.
 - [Scalable Architecture](21-system-design/README.md#scalable-architecture) — Horizontal scaling; Vertical scaling; Databases; Load balancing; Queues; Event-driven systems; Replication; Consistency; Failure modes.
+- [Content Delivery and Edge Caching](21-system-design/README.md#content-delivery) — Origin and edge; Cache keys; Invalidation; TTL; Static content; Regional delivery.
+- [Architecture Evolution](21-system-design/README.md#architecture-evolution) — Modular monoliths; Microservice boundaries; Strangler migration; CQRS; Event sourcing; Distributed complexity.
 
 ### [Production Operations](22-production-operations/README.md)
 
@@ -390,6 +407,7 @@ Select deeper paths after mastering their foundations; expand from actual needs.
 
 - [Platform Engineering](23-advanced/README.md#platform-engineering) — Self-service interfaces; Golden paths; Platform contracts; Developer experience.
 - [Systems Performance Specialization](23-advanced/README.md#performance-specialization) — Profiling; Workload characterization; Cross-layer bottlenecks.
+- [Service Mesh](23-advanced/README.md#service-mesh) — Service-to-service traffic policy; Workload identity; Mutual TLS; Traffic telemetry; Istio; Linkerd; Operational cost.
 
 ## Cross-domain Dependency Sketches
 

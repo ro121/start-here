@@ -5,9 +5,15 @@ source: curriculum.yaml topic prerequisites; domain entry prerequisites are summ
   not inherited edges
 dependencies:
 - from: computer-fundamentals
+  to: discrete-math
+- from: computer-fundamentals
   to: programming-fundamentals
 - from: programming-fundamentals
   to: data-structures-algorithms
+- from: data-structures-algorithms
+  to: algorithm-analysis
+- from: discrete-math
+  to: algorithm-analysis
 - from: computer-fundamentals
   to: computer-architecture
 - from: computer-architecture
@@ -58,6 +64,8 @@ dependencies:
   to: tcp-ip
 - from: tcp-ip
   to: ethernet
+- from: ethernet
+  to: switching-vlans
 - from: tcp-ip
   to: ip-addressing
 - from: ip-addressing
@@ -70,6 +78,8 @@ dependencies:
   to: nat
 - from: tcp
   to: nat
+- from: routing
+  to: dynamic-routing
 - from: ip-addressing
   to: tcp
 - from: ip-addressing
@@ -98,6 +108,18 @@ dependencies:
   to: network-troubleshooting
 - from: network-security
   to: network-troubleshooting
+- from: routing
+  to: vpn-tunneling
+- from: tls
+  to: vpn-tunneling
+- from: network-security
+  to: vpn-tunneling
+- from: routing
+  to: network-automation
+- from: python-automation
+  to: network-automation
+- from: configuration-management-principles
+  to: network-automation
 - from: programming-fundamentals
   to: python-automation
 - from: linux-shell
@@ -105,11 +127,27 @@ dependencies:
 - from: linux-shell
   to: shell-automation
 - from: programming-fundamentals
+  to: programming-paradigms
+- from: python-automation
+  to: python-language
+- from: programming-paradigms
+  to: python-language
+- from: programming-fundamentals
   to: program-dependencies
 - from: python-automation
   to: network-programming
 - from: http
   to: network-programming
+- from: python-language
+  to: python-concurrency
+- from: concurrency
+  to: python-concurrency
+- from: python-language
+  to: python-quality
+- from: software-testing
+  to: python-quality
+- from: program-dependencies
+  to: python-quality
 - from: programming-fundamentals
   to: software-lifecycle
 - from: software-lifecycle
@@ -185,6 +223,10 @@ dependencies:
 - from: reliability-fundamentals
   to: cloud-architecture
 - from: cloud-fundamentals
+  to: serverless-computing
+- from: programming-fundamentals
+  to: serverless-computing
+- from: cloud-fundamentals
   to: cloud-governance
 - from: identity-access
   to: cloud-governance
@@ -222,6 +264,20 @@ dependencies:
   to: aws-messaging
 - from: cloud-fundamentals
   to: aws-messaging
+- from: container-images
+  to: aws-managed-containers
+- from: aws-vpc
+  to: aws-managed-containers
+- from: aws-iam
+  to: aws-managed-containers
+- from: serverless-computing
+  to: aws-serverless-edge
+- from: content-delivery
+  to: aws-serverless-edge
+- from: aws-iam
+  to: aws-serverless-edge
+- from: messaging
+  to: aws-serverless-edge
 - from: aws-iam
   to: aws-operations
 - from: telemetry
@@ -444,6 +500,14 @@ dependencies:
   to: distributed-transactions
 - from: idempotency
   to: distributed-transactions
+- from: dns
+  to: service-discovery
+- from: distributed-fundamentals
+  to: service-discovery
+- from: resilient-communication
+  to: overload-protection
+- from: capacity-performance
+  to: overload-protection
 - from: os-fundamentals
   to: reliability-fundamentals
 - from: reliability-fundamentals
@@ -482,6 +546,18 @@ dependencies:
   to: scalable-architecture
 - from: proxies-load-balancing
   to: scalable-architecture
+- from: caching
+  to: content-delivery
+- from: http
+  to: content-delivery
+- from: dns
+  to: content-delivery
+- from: system-design-method
+  to: architecture-evolution
+- from: messaging
+  to: architecture-evolution
+- from: database-transactions
+  to: architecture-evolution
 - from: reliability-objectives
   to: operational-readiness
 - from: deployment-strategies
@@ -506,3 +582,13 @@ dependencies:
   to: performance-specialization
 - from: linux-troubleshooting
   to: performance-specialization
+- from: kubernetes-networking
+  to: service-mesh
+- from: service-discovery
+  to: service-mesh
+- from: tls
+  to: service-mesh
+- from: identity-access
+  to: service-mesh
+- from: telemetry
+  to: service-mesh

@@ -38,14 +38,14 @@ This is one dependency-compatible reading order. External prerequisites can be l
 <a id="software-design"></a>
 #### Software Design Principles
 
-**Concepts:** Architecture; Cohesion; Coupling; SOLID; Interface design.
+**Concepts:** Architecture; Cohesion; Coupling; SOLID; Interface design; Design patterns; Dependency injection; Architecture diagrams.
 
 **Prerequisites:** [[06-software-engineering/README#Software Lifecycle and Requirements|Software Lifecycle and Requirements]] · [Software Lifecycle and Requirements](README.md#software-lifecycle); [[00-foundations/README#Data Structures and Algorithms|Data Structures and Algorithms]] · [Data Structures and Algorithms](../00-foundations/README.md#data-structures-algorithms)
 
 <a id="api-design"></a>
 #### API Design
 
-**Concepts:** REST; Contracts; Versioning; Authentication; Authorization; Error handling.
+**Concepts:** REST; Contracts; Versioning; Authentication; Authorization; Error handling; RPC; gRPC; GraphQL; Interface tradeoffs.
 
 **Prerequisites:** [[06-software-engineering/README#Software Design Principles|Software Design Principles]] · [Software Design Principles](README.md#software-design); [[04-networking/README#HTTP|HTTP]] · [HTTP](../04-networking/README.md#http); [[18-security/identity-access|Identity and Access Management]] · [Identity and Access Management](../18-security/identity-access.md)
 
@@ -90,4 +90,12 @@ flowchart TD
 
 ## Leads To
 
-[[07-git/README#Git Workflows|Git Workflows]] · [Git Workflows](../07-git/README.md#git-workflows); [[12-infrastructure-as-code/README#Infrastructure Testing and Delivery|Infrastructure Testing and Delivery]] · [Infrastructure Testing and Delivery](../12-infrastructure-as-code/README.md#infrastructure-testing); [[13-configuration-management/README#Configuration Testing|Configuration Testing]] · [Configuration Testing](../13-configuration-management/README.md#configuration-testing); [[14-kubernetes/README#Kubernetes Extensions|Kubernetes Extensions]] · [Kubernetes Extensions](../14-kubernetes/README.md#kubernetes-extensions); [[15-ci-cd/README#Continuous Integration|Continuous Integration]] · [Continuous Integration](../15-ci-cd/README.md#ci-fundamentals); [[21-system-design/README#System Design Method|System Design Method]] · [System Design Method](../21-system-design/README.md#system-design-method)
+[[05-programming/README#Python Testing and Tooling|Python Testing and Tooling]] · [Python Testing and Tooling](../05-programming/README.md#python-quality); [[07-git/README#Git Workflows|Git Workflows]] · [Git Workflows](../07-git/README.md#git-workflows); [[12-infrastructure-as-code/README#Infrastructure Testing and Delivery|Infrastructure Testing and Delivery]] · [Infrastructure Testing and Delivery](../12-infrastructure-as-code/README.md#infrastructure-testing); [[13-configuration-management/README#Configuration Testing|Configuration Testing]] · [Configuration Testing](../13-configuration-management/README.md#configuration-testing); [[14-kubernetes/README#Kubernetes Extensions|Kubernetes Extensions]] · [Kubernetes Extensions](../14-kubernetes/README.md#kubernetes-extensions); [[15-ci-cd/README#Continuous Integration|Continuous Integration]] · [Continuous Integration](../15-ci-cd/README.md#ci-fundamentals); [[21-system-design/README#System Design Method|System Design Method]] · [System Design Method](../21-system-design/README.md#system-design-method)
+
+## Reference Roadmaps
+
+Use these for coverage and further exploration; the prerequisite relationships here are curated independently.
+
+- [roadmap.sh — Python](https://roadmap.sh/python)
+
+[Reference review and scope decisions](../references/roadmap-sh.md)

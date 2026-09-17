@@ -15,6 +15,10 @@ args = parser.parse_args()
 model = yaml.safe_load((ROOT / 'curriculum.yaml').read_text(encoding='utf-8'))
 assert model['schema_version'] == 1
 domains = model['curriculum']
+references = {r['id']:r for r in model.get('references',[])}
+assert len(references)==len(model.get('references',[])), 'Duplicate reference ID'
+for reference in references.values():
+    assert reference['url'].startswith('https://') and reference['title'].strip()
 nodes, topics, owners = {}, {}, {}
 
 def register(n):
@@ -30,6 +34,7 @@ def ordered(items):
 ordered(domains)
 for d in domains:
     register(d)
+    assert all(ref in references for ref in d.get('references',[])), d['id']
     ordered(d['subjects'])
     for s in d['subjects']:
         register(s)
@@ -115,6 +120,10 @@ for d in domains:
     if selected: lines.extend(['## Dependency Sketch','','Selected direct prerequisite edges, not the entire domain graph. Arrows mean “learn before”.','',diagram(selected),''])
     downstream=list(dict.fromkeys(b for a,b in edges if a in local and b not in local))
     lines.extend(['## Leads To','',refs(downstream,path) if downstream else 'Specialize further according to real systems and learning needs.',''])
+    if d.get('references'):
+        lines.extend(['## Reference Roadmaps','','Use these for coverage and further exploration; the prerequisite relationships here are curated independently.',''])
+        lines.extend(f'- [{references[ref]["title"]}]({references[ref]["url"]})' for ref in d['references'])
+        lines.extend(['','[Reference review and scope decisions](../references/roadmap-sh.md)',''])
     outputs[path]='\n'.join(lines)
 
 phases = [

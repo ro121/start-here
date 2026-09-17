@@ -4,6 +4,8 @@ A long-term curriculum for senior DevOps, cloud, and software engineering. This 
 
 Start with the [master curriculum](CURRICULUM.md), then open a domain map. Folder numbers help browsing; they are not a mandatory global sequence. Linux and networking can develop together. Security and observability enter early wherever a topic needs them.
 
+The [roadmap.sh reference review](references/roadmap-sh.md) connects six external roadmaps to this curriculum and records additions, overlaps, and optional branches.
+
 ## Structure
 
 **Domain → Subject → Topic → Concepts.** Domains have a README map; subjects group topics; small concepts remain inside their parent topic. Most topics initially live as sections in a map. Six representative notes demonstrate the deeper format without creating hundreds of empty files.

@@ -67,6 +67,7 @@ Successful login does not grant every action. An identity, credential, role, and
 - [[18-security/README#Secrets and Key Management|Secrets and Key Management]] · [Secrets and Key Management](README.md#secrets-key-management)
 - [[18-security/README#Network Security|Network Security]] · [Network Security](README.md#network-security)
 - [[18-security/README#Policy as Code|Policy as Code]] · [Policy as Code](README.md#policy-as-code)
+- [[23-advanced/README#Service Mesh|Service Mesh]] · [Service Mesh](../23-advanced/README.md#service-mesh)
 
 ## Technology Implementations
 

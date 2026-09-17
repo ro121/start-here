@@ -49,7 +49,7 @@ This is one dependency-compatible reading order. External prerequisites can be l
 <a id="linux-shell"></a>
 #### Linux Shell
 
-**Concepts:** Shell; Bash; Environment variables; Pipes; Redirection; Exit codes.
+**Concepts:** Shell; Bash; Environment variables; Pipes; Redirection; Exit codes; Text manipulation; Terminal editors.
 
 **Prerequisites:** [[03-linux/README#Linux Filesystem|Linux Filesystem]] · [Linux Filesystem](README.md#linux-filesystem); [[00-foundations/README#Programming Fundamentals|Programming Fundamentals]] · [Programming Fundamentals](../00-foundations/README.md#programming-fundamentals)
 
@@ -112,3 +112,12 @@ flowchart TD
 ## Leads To
 
 [[05-programming/README#Python Automation|Python Automation]] · [Python Automation](../05-programming/README.md#python-automation); [[05-programming/README#Shell Automation|Shell Automation]] · [Shell Automation](../05-programming/README.md#shell-automation); [[07-git/README#Git Fundamentals|Git Fundamentals]] · [Git Fundamentals](../07-git/README.md#git-fundamentals); [[09-containers/README#Container Fundamentals|Container Fundamentals]] · [Container Fundamentals](../09-containers/README.md#container-fundamentals); [[09-containers/README#Container Storage|Container Storage]] · [Container Storage](../09-containers/README.md#container-storage); [[09-containers/README#Docker Networking|Docker Networking]] · [Docker Networking](../09-containers/README.md#docker-networking); [[13-configuration-management/README#Configuration Management Principles|Configuration Management Principles]] · [Configuration Management Principles](../13-configuration-management/README.md#configuration-management-principles); [[13-configuration-management/README#Ansible Automation|Ansible Automation]] · [Ansible Automation](../13-configuration-management/README.md#ansible-automation); [[22-production-operations/README#Backup and Disaster Recovery|Backup and Disaster Recovery]] · [Backup and Disaster Recovery](../22-production-operations/README.md#backup-recovery); [[23-advanced/README#Systems Performance Specialization|Systems Performance Specialization]] · [Systems Performance Specialization](../23-advanced/README.md#performance-specialization)
+
+## Reference Roadmaps
+
+Use these for coverage and further exploration; the prerequisite relationships here are curated independently.
+
+- [roadmap.sh — Network Engineer](https://roadmap.sh/network-engineer)
+- [roadmap.sh — DevOps](https://roadmap.sh/devops)
+
+[Reference review and scope decisions](../references/roadmap-sh.md)

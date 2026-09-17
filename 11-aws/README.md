@@ -24,8 +24,10 @@ This is one dependency-compatible reading order. External prerequisites can be l
 4. [AWS VPC](README.md#aws-vpc)
 5. [AWS Compute](README.md#aws-compute)
 6. [AWS Traffic and DNS](README.md#aws-traffic)
-7. [AWS Messaging](README.md#aws-messaging)
-8. [AWS EKS](README.md#aws-eks)
+7. [AWS Managed Container Deployment](README.md#aws-managed-containers)
+8. [AWS Messaging](README.md#aws-messaging)
+9. [AWS Serverless and Edge Delivery](README.md#aws-serverless-edge)
+10. [AWS EKS](README.md#aws-eks)
 
 ## Major Areas
 
@@ -54,16 +56,20 @@ This is one dependency-compatible reading order. External prerequisites can be l
 <a id="aws-compute"></a>
 #### AWS Compute
 
-**Concepts:** EC2; AMIs; EBS; Auto Scaling; Lambda.
+**Concepts:** EC2; AMIs; EBS; Auto Scaling; Lambda; Quotas; Instance purchase models; User data; Launch templates.
 
 **Prerequisites:** [[11-aws/README#AWS VPC|AWS VPC]] · [AWS VPC](README.md#aws-vpc); [[09-containers/README#Container Fundamentals|Container Fundamentals]] · [Container Fundamentals](../09-containers/README.md#container-fundamentals)
+
+**Related:** [[10-cloud/README#Serverless Computing|Serverless Computing]] · [Serverless Computing](../10-cloud/README.md#serverless-computing); [[11-aws/README#AWS Serverless and Edge Delivery|AWS Serverless and Edge Delivery]] · [AWS Serverless and Edge Delivery](README.md#aws-serverless-edge); [[11-aws/README#AWS Managed Container Deployment|AWS Managed Container Deployment]] · [AWS Managed Container Deployment](README.md#aws-managed-containers)
 
 <a id="aws-data"></a>
 #### AWS Data Services
 
-**Concepts:** S3; RDS; DynamoDB; Durability; Access patterns.
+**Concepts:** S3; RDS; DynamoDB; Durability; Access patterns; S3 lifecycle; Storage classes; DynamoDB indexes; ElastiCache.
 
 **Prerequisites:** [[10-cloud/README#Cloud Fundamentals|Cloud Fundamentals]] · [Cloud Fundamentals](../10-cloud/README.md#cloud-fundamentals); [[08-databases/README#Data Modeling|Data Modeling]] · [Data Modeling](../08-databases/README.md#data-modeling); [[08-databases/README#Database Transactions|Database Transactions]] · [Database Transactions](../08-databases/README.md#database-transactions)
+
+**Implements / applies:** [[08-databases/README#Data Modeling|Data Modeling]] · [Data Modeling](../08-databases/README.md#data-modeling); [[21-system-design/README#Caching|Caching]] · [Caching](../21-system-design/README.md#caching)
 
 <a id="aws-traffic"></a>
 #### AWS Traffic and DNS
@@ -82,6 +88,24 @@ This is one dependency-compatible reading order. External prerequisites can be l
 **Prerequisites:** [[19-distributed-systems/README#Messaging and Event-Driven Architecture|Messaging and Event-Driven Architecture]] · [Messaging and Event-Driven Architecture](../19-distributed-systems/README.md#messaging); [[10-cloud/README#Cloud Fundamentals|Cloud Fundamentals]] · [Cloud Fundamentals](../10-cloud/README.md#cloud-fundamentals)
 
 **Implements / applies:** [[19-distributed-systems/README#Messaging and Event-Driven Architecture|Messaging and Event-Driven Architecture]] · [Messaging and Event-Driven Architecture](../19-distributed-systems/README.md#messaging)
+
+<a id="aws-managed-containers"></a>
+#### AWS Managed Container Deployment
+
+**Concepts:** ECR; ECS; Task definitions; Services; Fargate; Capacity and access boundaries.
+
+**Prerequisites:** [[09-containers/README#Container Images|Container Images]] · [Container Images](../09-containers/README.md#container-images); [[11-aws/README#AWS VPC|AWS VPC]] · [AWS VPC](README.md#aws-vpc); [[11-aws/README#AWS IAM and Organizations|AWS IAM and Organizations]] · [AWS IAM and Organizations](README.md#aws-iam)
+
+**Implements / applies:** [[09-containers/README#Container Fundamentals|Container Fundamentals]] · [Container Fundamentals](../09-containers/README.md#container-fundamentals); [[15-ci-cd/README#Artifact Management|Artifact Management]] · [Artifact Management](../15-ci-cd/README.md#artifact-management)
+
+<a id="aws-serverless-edge"></a>
+#### AWS Serverless and Edge Delivery
+
+**Concepts:** Lambda; API Gateway; EventBridge; CloudFront; Origin access; Cache invalidation.
+
+**Prerequisites:** [[10-cloud/README#Serverless Computing|Serverless Computing]] · [Serverless Computing](../10-cloud/README.md#serverless-computing); [[21-system-design/README#Content Delivery and Edge Caching|Content Delivery and Edge Caching]] · [Content Delivery and Edge Caching](../21-system-design/README.md#content-delivery); [[11-aws/README#AWS IAM and Organizations|AWS IAM and Organizations]] · [AWS IAM and Organizations](README.md#aws-iam); [[19-distributed-systems/README#Messaging and Event-Driven Architecture|Messaging and Event-Driven Architecture]] · [Messaging and Event-Driven Architecture](../19-distributed-systems/README.md#messaging)
+
+**Implements / applies:** [[10-cloud/README#Serverless Computing|Serverless Computing]] · [Serverless Computing](../10-cloud/README.md#serverless-computing); [[21-system-design/README#Content Delivery and Edge Caching|Content Delivery and Edge Caching]] · [Content Delivery and Edge Caching](../21-system-design/README.md#content-delivery); [[19-distributed-systems/README#Messaging and Event-Driven Architecture|Messaging and Event-Driven Architecture]] · [Messaging and Event-Driven Architecture](../19-distributed-systems/README.md#messaging)
 
 ### Operations and Managed Kubernetes
 
@@ -111,19 +135,28 @@ flowchart TD
     n1["AWS Compute"]
     n2["AWS Traffic and DNS"]
     n3["AWS IAM and Organizations"]
-    n4["AWS Operations and Secrets"]
-    n5["AWS EKS"]
-    n6["Cloud Governance and Cost"]
-    n7["Identity and Access Management"]
+    n4["AWS Managed Container Deployment"]
+    n5["AWS Serverless and Edge Delivery"]
+    n6["AWS Operations and Secrets"]
+    n7["AWS EKS"]
     n0 --> n1
     n0 --> n2
     n3 --> n4
+    n0 --> n4
     n3 --> n5
-    n0 --> n5
-    n6 --> n3
-    n7 --> n3
+    n3 --> n6
+    n3 --> n7
+    n0 --> n7
 ```
 
 ## Leads To
 
 Specialize further according to real systems and learning needs.
+
+## Reference Roadmaps
+
+Use these for coverage and further exploration; the prerequisite relationships here are curated independently.
+
+- [roadmap.sh — AWS](https://roadmap.sh/aws)
+
+[Reference review and scope decisions](../references/roadmap-sh.md)

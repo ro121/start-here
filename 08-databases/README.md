@@ -30,7 +30,7 @@ This is one dependency-compatible reading order. External prerequisites can be l
 <a id="data-modeling"></a>
 #### Data Modeling
 
-**Concepts:** Entities; Relationships; Keys; Relational and document models.
+**Concepts:** Entities; Relationships; Keys; Relational and document models; Normalization; Denormalization; Key-value and wide-column models.
 
 **Prerequisites:** [[00-foundations/README#Data Structures and Algorithms|Data Structures and Algorithms]] · [Data Structures and Algorithms](../00-foundations/README.md#data-structures-algorithms)
 
@@ -80,4 +80,12 @@ flowchart TD
 
 ## Leads To
 
-[[11-aws/README#AWS Data Services|AWS Data Services]] · [AWS Data Services](../11-aws/README.md#aws-data); [[19-distributed-systems/README#Distributed Systems Fundamentals|Distributed Systems Fundamentals]] · [Distributed Systems Fundamentals](../19-distributed-systems/README.md#distributed-fundamentals); [[19-distributed-systems/README#Partitioning and Sharding|Partitioning and Sharding]] · [Partitioning and Sharding](../19-distributed-systems/README.md#partitioning-sharding); [[19-distributed-systems/README#Distributed Transactions|Distributed Transactions]] · [Distributed Transactions](../19-distributed-systems/README.md#distributed-transactions); [[21-system-design/README#System Design Method|System Design Method]] · [System Design Method](../21-system-design/README.md#system-design-method)
+[[11-aws/README#AWS Data Services|AWS Data Services]] · [AWS Data Services](../11-aws/README.md#aws-data); [[19-distributed-systems/README#Distributed Systems Fundamentals|Distributed Systems Fundamentals]] · [Distributed Systems Fundamentals](../19-distributed-systems/README.md#distributed-fundamentals); [[19-distributed-systems/README#Partitioning and Sharding|Partitioning and Sharding]] · [Partitioning and Sharding](../19-distributed-systems/README.md#partitioning-sharding); [[19-distributed-systems/README#Distributed Transactions|Distributed Transactions]] · [Distributed Transactions](../19-distributed-systems/README.md#distributed-transactions); [[21-system-design/README#System Design Method|System Design Method]] · [System Design Method](../21-system-design/README.md#system-design-method); [[21-system-design/README#Architecture Evolution|Architecture Evolution]] · [Architecture Evolution](../21-system-design/README.md#architecture-evolution)
+
+## Reference Roadmaps
+
+Use these for coverage and further exploration; the prerequisite relationships here are curated independently.
+
+- [roadmap.sh — Computer Science](https://roadmap.sh/computer-science)
+
+[Reference review and scope decisions](../references/roadmap-sh.md)

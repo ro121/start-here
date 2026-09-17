@@ -28,7 +28,7 @@ This is one dependency-compatible reading order. External prerequisites can be l
 <a id="computer-architecture"></a>
 #### Computer Architecture
 
-**Concepts:** CPU; Instruction execution; Caches; Memory; Storage; I/O.
+**Concepts:** CPU; Instruction execution; Caches; Memory; Storage; I/O; Registers; Endianness; Floating-point representation.
 
 **Prerequisites:** [[00-foundations/README#Computer Fundamentals|Computer Fundamentals]] · [Computer Fundamentals](../00-foundations/README.md#computer-fundamentals)
 
@@ -55,3 +55,11 @@ flowchart TD
 ## Leads To
 
 [[02-operating-systems/README#Operating System Fundamentals|Operating System Fundamentals]] · [Operating System Fundamentals](../02-operating-systems/README.md#os-fundamentals); [[14-kubernetes/README#Kubernetes Scheduling and Resources|Kubernetes Scheduling and Resources]] · [Kubernetes Scheduling and Resources](../14-kubernetes/README.md#kubernetes-scheduling); [[20-sre/README#Capacity and Performance|Capacity and Performance]] · [Capacity and Performance](../20-sre/README.md#capacity-performance)
+
+## Reference Roadmaps
+
+Use these for coverage and further exploration; the prerequisite relationships here are curated independently.
+
+- [roadmap.sh — Computer Science](https://roadmap.sh/computer-science)
+
+[Reference review and scope decisions](../references/roadmap-sh.md)

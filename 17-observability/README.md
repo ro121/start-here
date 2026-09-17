@@ -30,7 +30,7 @@ This is one dependency-compatible reading order. External prerequisites can be l
 <a id="telemetry"></a>
 #### Telemetry and Observability
 
-**Concepts:** Monitoring; Metrics; Logs; Traces; Signal context; Instrumentation.
+**Concepts:** Monitoring; Metrics; Logs; Traces; Signal context; Instrumentation; Log aggregation; Trace storage; Loki; Elastic Stack; Jaeger.
 
 **Prerequisites:** [[00-foundations/README#Programming Fundamentals|Programming Fundamentals]] · [Programming Fundamentals](../00-foundations/README.md#programming-fundamentals)
 
@@ -86,4 +86,12 @@ flowchart TD
 
 ## Leads To
 
-[[11-aws/README#AWS Operations and Secrets|AWS Operations and Secrets]] · [AWS Operations and Secrets](../11-aws/README.md#aws-operations); [[14-kubernetes/README#Kubernetes Troubleshooting|Kubernetes Troubleshooting]] · [Kubernetes Troubleshooting](../14-kubernetes/README.md#kubernetes-troubleshooting); [[20-sre/README#Reliability Objectives|Reliability Objectives]] · [Reliability Objectives](../20-sre/README.md#reliability-objectives); [[22-production-operations/README#Incident Management|Incident Management]] · [Incident Management](../22-production-operations/README.md#incident-management)
+[[11-aws/README#AWS Operations and Secrets|AWS Operations and Secrets]] · [AWS Operations and Secrets](../11-aws/README.md#aws-operations); [[14-kubernetes/README#Kubernetes Troubleshooting|Kubernetes Troubleshooting]] · [Kubernetes Troubleshooting](../14-kubernetes/README.md#kubernetes-troubleshooting); [[20-sre/README#Reliability Objectives|Reliability Objectives]] · [Reliability Objectives](../20-sre/README.md#reliability-objectives); [[22-production-operations/README#Incident Management|Incident Management]] · [Incident Management](../22-production-operations/README.md#incident-management); [[23-advanced/README#Service Mesh|Service Mesh]] · [Service Mesh](../23-advanced/README.md#service-mesh)
+
+## Reference Roadmaps
+
+Use these for coverage and further exploration; the prerequisite relationships here are curated independently.
+
+- [roadmap.sh — DevOps](https://roadmap.sh/devops)
+
+[Reference review and scope decisions](../references/roadmap-sh.md)

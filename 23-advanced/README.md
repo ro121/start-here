@@ -20,6 +20,7 @@ This is one dependency-compatible reading order. External prerequisites can be l
 
 1. [Platform Engineering](README.md#platform-engineering)
 2. [Systems Performance Specialization](README.md#performance-specialization)
+3. [Service Mesh](README.md#service-mesh)
 
 ## Major Areas
 
@@ -38,6 +39,15 @@ This is one dependency-compatible reading order. External prerequisites can be l
 **Concepts:** Profiling; Workload characterization; Cross-layer bottlenecks.
 
 **Prerequisites:** [[20-sre/README#Capacity and Performance|Capacity and Performance]] · [Capacity and Performance](../20-sre/README.md#capacity-performance); [[03-linux/README#Linux Troubleshooting|Linux Troubleshooting]] · [Linux Troubleshooting](../03-linux/README.md#linux-troubleshooting)
+
+<a id="service-mesh"></a>
+#### Service Mesh
+
+**Concepts:** Service-to-service traffic policy; Workload identity; Mutual TLS; Traffic telemetry; Istio; Linkerd; Operational cost.
+
+**Prerequisites:** [[14-kubernetes/README#Kubernetes Networking|Kubernetes Networking]] · [Kubernetes Networking](../14-kubernetes/README.md#kubernetes-networking); [[19-distributed-systems/README#Service Discovery|Service Discovery]] · [Service Discovery](../19-distributed-systems/README.md#service-discovery); [[04-networking/README#TLS|TLS]] · [TLS](../04-networking/README.md#tls); [[18-security/identity-access|Identity and Access Management]] · [Identity and Access Management](../18-security/identity-access.md); [[17-observability/README#Telemetry and Observability|Telemetry and Observability]] · [Telemetry and Observability](../17-observability/README.md#telemetry)
+
+**Related:** [[19-distributed-systems/README#Overload Protection|Overload Protection]] · [Overload Protection](../19-distributed-systems/README.md#overload-protection)
 
 ## Dependency Sketch
 
@@ -64,3 +74,11 @@ flowchart TD
 ## Leads To
 
 Specialize further according to real systems and learning needs.
+
+## Reference Roadmaps
+
+Use these for coverage and further exploration; the prerequisite relationships here are curated independently.
+
+- [roadmap.sh — DevOps](https://roadmap.sh/devops)
+
+[Reference review and scope decisions](../references/roadmap-sh.md)

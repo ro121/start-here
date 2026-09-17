@@ -25,6 +25,8 @@ This is one dependency-compatible reading order. External prerequisites can be l
 5. [Idempotency](README.md#idempotency)
 6. [Resilient Communication](README.md#resilient-communication)
 7. [Distributed Transactions](README.md#distributed-transactions)
+8. [Service Discovery](README.md#service-discovery)
+9. [Overload Protection](README.md#overload-protection)
 
 ## Major Areas
 
@@ -83,6 +85,22 @@ This is one dependency-compatible reading order. External prerequisites can be l
 
 **Prerequisites:** [[08-databases/README#Database Transactions|Database Transactions]] · [Database Transactions](../08-databases/README.md#database-transactions); [[19-distributed-systems/README#Messaging and Event-Driven Architecture|Messaging and Event-Driven Architecture]] · [Messaging and Event-Driven Architecture](README.md#messaging); [[19-distributed-systems/README#Idempotency|Idempotency]] · [Idempotency](README.md#idempotency)
 
+<a id="service-discovery"></a>
+#### Service Discovery
+
+**Concepts:** Naming and registration; Endpoint freshness; Health; Client-side discovery; Server-side discovery.
+
+**Prerequisites:** [[04-networking/dns|DNS]] · [DNS](../04-networking/dns.md); [[19-distributed-systems/README#Distributed Systems Fundamentals|Distributed Systems Fundamentals]] · [Distributed Systems Fundamentals](README.md#distributed-fundamentals)
+
+**Related:** [[14-kubernetes/kubernetes-services|Kubernetes Services]] · [Kubernetes Services](../14-kubernetes/kubernetes-services.md)
+
+<a id="overload-protection"></a>
+#### Overload Protection
+
+**Concepts:** Backpressure; Admission control; Rate limiting; Load shedding; Bulkheads; Retry amplification.
+
+**Prerequisites:** [[19-distributed-systems/README#Resilient Communication|Resilient Communication]] · [Resilient Communication](README.md#resilient-communication); [[20-sre/README#Capacity and Performance|Capacity and Performance]] · [Capacity and Performance](../20-sre/README.md#capacity-performance)
+
 ## Dependency Sketch
 
 Selected direct prerequisite edges, not the entire domain graph. Arrows mean “learn before”.
@@ -96,7 +114,7 @@ flowchart TD
     n4["Resilient Communication"]
     n5["Idempotency"]
     n6["Distributed Transactions"]
-    n7["Concurrency"]
+    n7["Service Discovery"]
     n0 --> n1
     n0 --> n2
     n0 --> n3
@@ -104,9 +122,17 @@ flowchart TD
     n5 --> n4
     n3 --> n6
     n5 --> n6
-    n7 --> n0
+    n0 --> n7
 ```
 
 ## Leads To
 
-[[11-aws/README#AWS Messaging|AWS Messaging]] · [AWS Messaging](../11-aws/README.md#aws-messaging); [[12-infrastructure-as-code/README#Infrastructure as Code Principles|Infrastructure as Code Principles]] · [Infrastructure as Code Principles](../12-infrastructure-as-code/README.md#infrastructure-as-code-principles); [[13-configuration-management/README#Configuration Management Principles|Configuration Management Principles]] · [Configuration Management Principles](../13-configuration-management/README.md#configuration-management-principles); [[20-sre/README#Resilience Engineering|Resilience Engineering]] · [Resilience Engineering](../20-sre/README.md#resilience-engineering); [[21-system-design/README#Caching|Caching]] · [Caching](../21-system-design/README.md#caching); [[21-system-design/README#Scalable Architecture|Scalable Architecture]] · [Scalable Architecture](../21-system-design/README.md#scalable-architecture)
+[[11-aws/README#AWS Messaging|AWS Messaging]] · [AWS Messaging](../11-aws/README.md#aws-messaging); [[11-aws/README#AWS Serverless and Edge Delivery|AWS Serverless and Edge Delivery]] · [AWS Serverless and Edge Delivery](../11-aws/README.md#aws-serverless-edge); [[12-infrastructure-as-code/README#Infrastructure as Code Principles|Infrastructure as Code Principles]] · [Infrastructure as Code Principles](../12-infrastructure-as-code/README.md#infrastructure-as-code-principles); [[13-configuration-management/README#Configuration Management Principles|Configuration Management Principles]] · [Configuration Management Principles](../13-configuration-management/README.md#configuration-management-principles); [[20-sre/README#Resilience Engineering|Resilience Engineering]] · [Resilience Engineering](../20-sre/README.md#resilience-engineering); [[21-system-design/README#Caching|Caching]] · [Caching](../21-system-design/README.md#caching); [[21-system-design/README#Scalable Architecture|Scalable Architecture]] · [Scalable Architecture](../21-system-design/README.md#scalable-architecture); [[21-system-design/README#Architecture Evolution|Architecture Evolution]] · [Architecture Evolution](../21-system-design/README.md#architecture-evolution); [[23-advanced/README#Service Mesh|Service Mesh]] · [Service Mesh](../23-advanced/README.md#service-mesh)
+
+## Reference Roadmaps
+
+Use these for coverage and further exploration; the prerequisite relationships here are curated independently.
+
+- [roadmap.sh — System Design](https://roadmap.sh/system-design)
+
+[Reference review and scope decisions](../references/roadmap-sh.md)
