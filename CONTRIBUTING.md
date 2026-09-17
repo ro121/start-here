@@ -35,7 +35,7 @@ python scripts/curriculum.py build
 python scripts/curriculum.py check
 ```
 
-The build updates only domain maps, `CURRICULUM.md`, and `dependencies.yaml`. Check mode performs no writes and rejects duplicate IDs, invalid references, prerequisite cycles, stale generated artifacts, missing notes, mismatched note IDs, missing note prerequisites, and broken local Markdown or wiki targets. It checks link destinations rather than guaranteeing that external websites or Mermaid renderers are available.
+The build updates domain maps, `CURRICULUM.md`, `dependencies.yaml`, and the syllabus between the `syllabus:start` / `syllabus:end` comment markers in the root README. Keep those markers intact; edit syllabus content in YAML. README prose outside the markers is preserved. Check mode performs no writes and rejects duplicate IDs, invalid references, prerequisite cycles, stale generated artifacts, missing notes, mismatched note IDs, missing note prerequisites, and broken local Markdown or wiki targets. It checks link destinations rather than guaranteeing that external websites or Mermaid renderers are available.
 
 Edit authored notes separately using [the topic template](templates/topic.md). Keep their prerequisite and relationship sections consistent with YAML. Run check after both model and prose changes. The validator checks required prerequisite links but does not fully interpret prose or prove pedagogical correctness; review those manually.
 

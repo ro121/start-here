@@ -155,6 +155,29 @@ for title,pairs in [
     lines.extend([f'### {title}','',diagram(pairs),''])
 outputs['CURRICULUM.md']='\n'.join(lines)
 
+# Replace only the syllabus block; preserve the authored README introduction and guide.
+readme=(ROOT/'README.md').read_text(encoding='utf-8')
+start_marker,end_marker='<!-- syllabus:start -->','<!-- syllabus:end -->'
+assert readme.count(start_marker)==readme.count(end_marker)==1, 'README needs one syllabus marker pair'
+before,remainder=readme.split(start_marker,1)
+assert end_marker in remainder, 'README syllabus markers are out of order'
+_,after=remainder.split(end_marker,1)
+syllabus=['## Syllabus','','Expand a domain to browse **subjects → topics → subtopics**. Domain and topic links open their curriculum maps or notes. This index follows category order; consult topic prerequisites for learning order.','','### Domain Index','']
+syllabus.extend(f'- [{d["order"]:02d} · {d["title"]}](#syllabus-{d["id"]})' for d in domains)
+syllabus.append('')
+for title,ids in phases:
+    syllabus.extend([f'### Phase {title}',''])
+    for id in ids:
+        d=next(d for d in domains if d['id']==id)
+        syllabus.extend([f'<a id="syllabus-{id}"></a>','<details>',f'<summary>{d["order"]:02d} · {d["title"]}</summary>','',f'[Open {d["title"]} curriculum map]({d["path"]})',''])
+        for subject in d['subjects']:
+            syllabus.extend([f'- **{subject["title"]}**'])
+            for topic in subject['topics']:
+                syllabus.append(f'  - {link(topic["id"],"README.md",False)}')
+                syllabus.extend(f'    - {concept}' for concept in topic['concepts'])
+        syllabus.extend(['','</details>',''])
+outputs['README.md']=before+start_marker+'\n\n'+'\n'.join(syllabus)+end_marker+after
+
 for name,content in outputs.items():
     path=ROOT/name
     if args.command=='build':
@@ -188,7 +211,7 @@ if args.command=='check':
             destinations.append((ROOT,file+'.md'+sep+anchor))
         for base,dest in destinations:
             file,sep,anchor=dest.partition('#')
-            targetpath=(base/file).resolve()
+            targetpath=(base/file).resolve() if file else path.resolve()
             assert targetpath.is_relative_to(ROOT) and targetpath.exists(),f'Broken link in {path}: {dest}'
             if sep:
                 body=targetpath.read_text(encoding='utf-8')
