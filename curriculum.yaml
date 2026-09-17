@@ -1,0 +1,2008 @@
+schema_version: 1
+curriculum:
+- id: foundations
+  title: Foundations
+  order: 0
+  path: 00-foundations/README.md
+  purpose: Build the vocabulary and reasoning skills used throughout computing.
+  prerequisites: []
+  subjects:
+  - id: computing-literacy-subject
+    title: Computing Literacy
+    order: 1
+    topics:
+    - id: computer-fundamentals
+      title: Computer Fundamentals
+      order: 1
+      prerequisites: []
+      concepts:
+      - Hardware and software
+      - Input and output
+      - Binary
+      - Bits and bytes
+      - Units and encodings
+  - id: programming-basics-subject
+    title: Programming Basics
+    order: 2
+    topics:
+    - id: programming-fundamentals
+      title: Programming Fundamentals
+      order: 1
+      prerequisites:
+      - computer-fundamentals
+      concepts:
+      - Variables
+      - Data types
+      - Control flow
+      - Functions
+      - Error handling
+    - id: data-structures-algorithms
+      title: Data Structures and Algorithms
+      order: 2
+      prerequisites:
+      - programming-fundamentals
+      concepts:
+      - Arrays
+      - Lists
+      - Maps
+      - Trees
+      - Searching
+      - Sorting
+      - Complexity
+- id: computer-systems
+  title: Computer Systems
+  order: 1
+  path: 01-computer-systems/README.md
+  purpose: Understand how hardware executes programs and where resource limits arise.
+  prerequisites:
+  - computer-fundamentals
+  subjects:
+  - id: hardware-subject
+    title: Hardware and Execution
+    order: 1
+    topics:
+    - id: computer-architecture
+      title: Computer Architecture
+      order: 1
+      prerequisites:
+      - computer-fundamentals
+      concepts:
+      - CPU
+      - Instruction execution
+      - Caches
+      - Memory
+      - Storage
+      - I/O
+    - id: systems-performance
+      title: Systems Performance
+      order: 2
+      prerequisites:
+      - computer-architecture
+      concepts:
+      - Locality
+      - CPU bottlenecks
+      - Memory bandwidth
+      - Storage latency
+- id: operating-systems
+  title: Operating Systems
+  order: 2
+  path: 02-operating-systems/README.md
+  purpose: Understand resource isolation, scheduling, and the interfaces between programs
+    and hardware.
+  prerequisites:
+  - computer-architecture
+  subjects:
+  - id: os-mechanics-subject
+    title: Operating System Mechanics
+    order: 1
+    topics:
+    - id: os-fundamentals
+      title: Operating System Fundamentals
+      order: 1
+      prerequisites:
+      - computer-architecture
+      concepts:
+      - Kernel
+      - User space
+      - System calls
+      - Interrupts
+      - Filesystems
+    - id: processes-threads
+      title: Processes and Threads
+      order: 2
+      prerequisites:
+      - os-fundamentals
+      concepts:
+      - Process address spaces
+      - Threads
+      - Scheduling
+      - Context switching
+    - id: memory-management
+      title: Memory Management
+      order: 3
+      prerequisites:
+      - os-fundamentals
+      concepts:
+      - Virtual memory
+      - Paging
+      - Allocation
+      - Page faults
+      - Swap
+    - id: concurrency
+      title: Concurrency
+      order: 4
+      prerequisites:
+      - processes-threads
+      - programming-fundamentals
+      concepts:
+      - Race conditions
+      - Locks
+      - Deadlocks
+      - Synchronization
+      - Parallelism
+- id: linux
+  title: Linux
+  order: 3
+  path: 03-linux/README.md
+  purpose: Operate Linux systems and diagnose their behavior using operating system
+    concepts.
+  prerequisites:
+  - os-fundamentals
+  subjects:
+  - id: linux-basics-subject
+    title: System Fundamentals
+    order: 1
+    topics:
+    - id: linux-filesystem
+      title: Linux Filesystem
+      order: 1
+      prerequisites:
+      - os-fundamentals
+      concepts:
+      - Files
+      - Directories
+      - Inodes
+      - Mounts
+      - Paths
+      - Package management
+    - id: linux-users-permissions
+      title: Linux Users and Permissions
+      order: 2
+      prerequisites:
+      - linux-filesystem
+      - identity-access
+      concepts:
+      - Users
+      - Groups
+      - Ownership
+      - Mode bits
+      - sudo
+      - ACLs
+      implements:
+      - identity-access
+    - id: linux-shell
+      title: Linux Shell
+      order: 3
+      prerequisites:
+      - linux-filesystem
+      - programming-fundamentals
+      concepts:
+      - Shell
+      - Bash
+      - Environment variables
+      - Pipes
+      - Redirection
+      - Exit codes
+  - id: linux-operations-subject
+    title: Runtime and Operations
+    order: 2
+    topics:
+    - id: linux-processes
+      title: Linux Processes
+      order: 1
+      prerequisites:
+      - processes-threads
+      - linux-shell
+      concepts:
+      - Process inspection
+      - Threads
+      - Signals
+      - File descriptors
+      - /proc
+    - id: linux-services
+      title: Linux Services
+      order: 2
+      prerequisites:
+      - linux-processes
+      concepts:
+      - systemd
+      - Units
+      - Service lifecycle
+      - Dependencies
+      - Journal logs
+      implements:
+      - desired-state
+    - id: linux-networking
+      title: Linux Networking
+      order: 3
+      prerequisites:
+      - linux-shell
+      - routing
+      - dns
+      - tcp
+      concepts:
+      - Interfaces
+      - Routes
+      - Sockets
+      - Resolver configuration
+      - DNS resolution
+      - SSH
+    - id: linux-troubleshooting
+      title: Linux Troubleshooting
+      order: 4
+      prerequisites:
+      - linux-services
+      - linux-networking
+      - memory-management
+      concepts:
+      - Logs
+      - CPU saturation
+      - Memory pressure
+      - Disk exhaustion
+      - Socket inspection
+- id: networking
+  title: Networking
+  order: 4
+  path: 04-networking/README.md
+  purpose: Understand communication from local links through application protocols
+    and traffic management.
+  prerequisites:
+  - computer-fundamentals
+  subjects:
+  - id: network-models-subject
+    title: Models and Local Links
+    order: 1
+    topics:
+    - id: osi-model
+      title: OSI Model
+      order: 1
+      prerequisites:
+      - computer-fundamentals
+      concepts:
+      - Layers
+      - Encapsulation
+      - Model limitations
+    - id: tcp-ip
+      title: TCP-IP Model
+      order: 2
+      prerequisites:
+      - osi-model
+      concepts:
+      - Link layer
+      - Internet layer
+      - Transport layer
+      - Application layer
+    - id: ethernet
+      title: Ethernet
+      order: 3
+      prerequisites:
+      - tcp-ip
+      concepts:
+      - Frames
+      - MAC addresses
+      - Switching
+      - ARP
+  - id: network-addressing-subject
+    title: Addressing and Routing
+    order: 2
+    topics:
+    - id: ip-addressing
+      title: IP Addressing
+      order: 1
+      prerequisites:
+      - tcp-ip
+      concepts:
+      - IP
+      - IPv4
+      - IPv6
+      - Public and private addresses
+      - DHCP
+      note: 04-networking/ip-addressing.md
+      related:
+      - ethernet
+      - network-security
+    - id: subnetting
+      title: Subnetting
+      order: 2
+      prerequisites:
+      - ip-addressing
+      concepts:
+      - CIDR
+      - Prefixes
+      - Subnet boundaries
+      - IPv4 and IPv6 allocation
+      note: 04-networking/subnetting.md
+      related:
+      - ip-addressing
+      - aws-vpc
+    - id: routing
+      title: Routing
+      order: 3
+      prerequisites:
+      - subnetting
+      - ethernet
+      concepts:
+      - Route lookup
+      - Longest-prefix match
+      - Default gateways
+      - Route tables
+    - id: nat
+      title: NAT
+      order: 4
+      prerequisites:
+      - routing
+      - tcp
+      concepts:
+      - Source NAT
+      - Destination NAT
+      - Connection tracking
+      - Port translation
+  - id: network-protocols-subject
+    title: Transport and Application Protocols
+    order: 3
+    topics:
+    - id: tcp
+      title: TCP
+      order: 1
+      prerequisites:
+      - ip-addressing
+      concepts:
+      - Ports
+      - Three-way handshake
+      - Sequence numbers
+      - Retransmission
+      - Flow and congestion control
+    - id: udp
+      title: UDP
+      order: 2
+      prerequisites:
+      - ip-addressing
+      concepts:
+      - Datagrams
+      - Ports
+      - Loss
+      - Application-managed reliability
+    - id: dns
+      title: DNS
+      order: 3
+      prerequisites:
+      - udp
+      - tcp
+      concepts:
+      - Zones
+      - Records
+      - Recursive resolution
+      - Authoritative servers
+      - Caching
+      - TTL
+      related:
+      - http
+      - kubernetes-networking
+      - aws-traffic
+      note: 04-networking/dns.md
+    - id: http
+      title: HTTP
+      order: 4
+      prerequisites:
+      - tcp
+      - dns
+      concepts:
+      - Methods
+      - Status codes
+      - Headers
+      - Caching semantics
+      - HTTPS
+      - Connection reuse
+    - id: tls
+      title: TLS
+      order: 5
+      prerequisites:
+      - tcp
+      - pki
+      concepts:
+      - Handshake
+      - Certificates
+      - Peer verification
+      - Transport encryption
+      related:
+      - http
+  - id: traffic-management-subject
+    title: Traffic Management and Diagnosis
+    order: 4
+    topics:
+    - id: proxies-load-balancing
+      title: Proxies and Load Balancing
+      order: 1
+      prerequisites:
+      - http
+      - tls
+      concepts:
+      - Forward proxy
+      - Reverse proxy
+      - L4 and L7 balancing
+      - Health checks
+    - id: network-troubleshooting
+      title: Network Troubleshooting
+      order: 2
+      prerequisites:
+      - routing
+      - dns
+      - tls
+      - network-security
+      concepts:
+      - Layered diagnosis
+      - Packet capture
+      - DNS failures
+      - Connection timeouts
+- id: programming
+  title: Programming and Scripting
+  order: 5
+  path: 05-programming/README.md
+  purpose: Turn programming fundamentals into reliable automation and maintainable
+    programs.
+  prerequisites:
+  - programming-fundamentals
+  - linux-shell
+  subjects:
+  - id: automation-languages-subject
+    title: Automation Languages
+    order: 1
+    topics:
+    - id: python-automation
+      title: Python Automation
+      order: 1
+      prerequisites:
+      - programming-fundamentals
+      - linux-shell
+      concepts:
+      - Functions and modules
+      - File I/O
+      - Exceptions
+      - Environments
+      - API clients
+    - id: shell-automation
+      title: Shell Automation
+      order: 2
+      prerequisites:
+      - linux-shell
+      concepts:
+      - Quoting
+      - Pipelines
+      - Exit handling
+      - Script interfaces
+      - Safe retries
+  - id: program-runtime-subject
+    title: Program Runtime
+    order: 2
+    topics:
+    - id: program-dependencies
+      title: Program Dependencies and Packaging
+      order: 1
+      prerequisites:
+      - programming-fundamentals
+      concepts:
+      - Libraries
+      - Dependency resolution
+      - Lockfiles
+      - Packaging
+      - Distribution
+    - id: network-programming
+      title: Network Programming
+      order: 2
+      prerequisites:
+      - python-automation
+      - http
+      concepts:
+      - Sockets
+      - HTTP clients
+      - Timeouts
+      - Serialization
+- id: software-engineering
+  title: Software Engineering
+  order: 6
+  path: 06-software-engineering/README.md
+  purpose: Design, test, and evolve software with explicit interfaces and maintainability.
+  prerequisites:
+  - programming-fundamentals
+  subjects:
+  - id: software-design-foundations-subject
+    title: Design and Delivery Foundations
+    order: 1
+    topics:
+    - id: software-lifecycle
+      title: Software Lifecycle and Requirements
+      order: 1
+      prerequisites:
+      - programming-fundamentals
+      concepts:
+      - SDLC
+      - Requirements
+      - Feedback
+      - Change management
+    - id: software-design
+      title: Software Design Principles
+      order: 2
+      prerequisites:
+      - software-lifecycle
+      - data-structures-algorithms
+      concepts:
+      - Architecture
+      - Cohesion
+      - Coupling
+      - SOLID
+      - Interface design
+    - id: api-design
+      title: API Design
+      order: 3
+      prerequisites:
+      - software-design
+      - http
+      - identity-access
+      concepts:
+      - REST
+      - Contracts
+      - Versioning
+      - Authentication
+      - Authorization
+      - Error handling
+  - id: software-quality-subject
+    title: Quality and Distribution
+    order: 2
+    topics:
+    - id: software-testing
+      title: Software Testing
+      order: 1
+      prerequisites:
+      - software-design
+      concepts:
+      - Unit testing
+      - Integration testing
+      - End-to-end testing
+      - Test doubles
+    - id: application-diagnostics
+      title: Application Diagnostics
+      order: 2
+      prerequisites:
+      - software-testing
+      concepts:
+      - Structured logging
+      - Error context
+      - Correlation identifiers
+- id: git
+  title: Git and Version Control
+  order: 7
+  path: 07-git/README.md
+  purpose: Understand history, collaboration, and reproducible source changes.
+  prerequisites:
+  - linux-shell
+  subjects:
+  - id: git-basics-subject
+    title: History and Collaboration
+    order: 1
+    topics:
+    - id: git-fundamentals
+      title: Git Fundamentals
+      order: 1
+      prerequisites:
+      - linux-shell
+      concepts:
+      - Working tree
+      - Index
+      - Commits
+      - Remote repositories
+      - Tags
+    - id: git-branching
+      title: Git Branching and Integration
+      order: 2
+      prerequisites:
+      - git-fundamentals
+      concepts:
+      - Branches
+      - Merge
+      - Rebase
+      - Cherry-pick
+      - Merge conflicts
+    - id: git-workflows
+      title: Git Workflows
+      order: 3
+      prerequisites:
+      - git-branching
+      - software-lifecycle
+      concepts:
+      - Pull requests
+      - Reviews
+      - Trunk-based development
+      - Release branches
+  - id: git-mechanics-subject
+    title: Internals
+    order: 2
+    topics:
+    - id: git-internals
+      title: Git Internals
+      order: 1
+      prerequisites:
+      - git-branching
+      concepts:
+      - Objects
+      - Trees
+      - Refs
+      - Commit DAG
+      - Reflog
+- id: databases
+  title: Databases and Data
+  order: 8
+  path: 08-databases/README.md
+  purpose: Model, persist, query, and recover data with explicit integrity guarantees.
+  prerequisites:
+  - data-structures-algorithms
+  subjects:
+  - id: data-models-subject
+    title: Models and Queries
+    order: 1
+    topics:
+    - id: data-modeling
+      title: Data Modeling
+      order: 1
+      prerequisites:
+      - data-structures-algorithms
+      concepts:
+      - Entities
+      - Relationships
+      - Keys
+      - Relational and document models
+    - id: sql-indexes
+      title: SQL and Indexes
+      order: 2
+      prerequisites:
+      - data-modeling
+      concepts:
+      - Queries
+      - Joins
+      - Index structures
+      - Query plans
+  - id: data-guarantees-subject
+    title: Integrity and Operations
+    order: 2
+    topics:
+    - id: database-transactions
+      title: Database Transactions
+      order: 1
+      prerequisites:
+      - sql-indexes
+      - concurrency
+      concepts:
+      - ACID
+      - Isolation
+      - Locking
+      - MVCC
+    - id: database-operations
+      title: Database Operations
+      order: 2
+      prerequisites:
+      - database-transactions
+      - backup-recovery
+      concepts:
+      - Migrations
+      - Connection pools
+      - Backup consistency
+      - Restore verification
+- id: containers
+  title: Virtualization and Containers
+  order: 9
+  path: 09-containers/README.md
+  purpose: Understand workload isolation, image distribution, and container runtime
+    behavior.
+  prerequisites:
+  - os-fundamentals
+  subjects:
+  - id: workload-isolation-subject
+    title: Isolation and Runtime
+    order: 1
+    topics:
+    - id: virtualization
+      title: Virtualization
+      order: 1
+      prerequisites:
+      - os-fundamentals
+      concepts:
+      - Hypervisors
+      - Virtual machines
+      - Guest kernels
+    - id: container-fundamentals
+      title: Container Fundamentals
+      order: 2
+      prerequisites:
+      - linux-processes
+      - memory-management
+      - virtualization
+      concepts:
+      - Namespaces
+      - cgroups
+      - Shared kernel
+      - OCI
+      - Docker
+      - Container runtimes
+  - id: container-delivery-subject
+    title: Images and Runtime Resources
+    order: 2
+    topics:
+    - id: container-images
+      title: Container Images
+      order: 1
+      prerequisites:
+      - container-fundamentals
+      - program-dependencies
+      concepts:
+      - Layers
+      - Dockerfile
+      - ENTRYPOINT
+      - CMD
+      - Multi-stage builds
+      - Registries
+    - id: container-storage
+      title: Container Storage
+      order: 2
+      prerequisites:
+      - container-fundamentals
+      - linux-filesystem
+      concepts:
+      - Writable layers
+      - Bind mounts
+      - Volumes
+      - Persistence
+    - id: docker-networking
+      title: Docker Networking
+      order: 3
+      prerequisites:
+      - container-fundamentals
+      - linux-networking
+      - nat
+      concepts:
+      - Network namespaces
+      - Bridges
+      - Port publishing
+      - Embedded DNS
+      implements:
+      - routing
+      - nat
+      - dns
+    - id: container-troubleshooting
+      title: Container Troubleshooting
+      order: 4
+      prerequisites:
+      - container-images
+      - container-storage
+      - docker-networking
+      concepts:
+      - Exit codes
+      - Resource limits
+      - Image failures
+      - Connectivity failures
+- id: cloud
+  title: Cloud Computing
+  order: 10
+  path: 10-cloud/README.md
+  purpose: Understand cloud service models, failure boundaries, and resource economics.
+  prerequisites:
+  - virtualization
+  - routing
+  subjects:
+  - id: cloud-models-subject
+    title: Service and Resource Models
+    order: 1
+    topics:
+    - id: cloud-fundamentals
+      title: Cloud Fundamentals
+      order: 1
+      prerequisites:
+      - virtualization
+      - routing
+      concepts:
+      - Service models
+      - Regions
+      - Availability zones
+      - Shared responsibility
+      - Compute
+      - Storage
+      - Networking
+      - Managed databases
+    - id: cloud-architecture
+      title: Cloud Architecture
+      order: 2
+      prerequisites:
+      - cloud-fundamentals
+      - reliability-fundamentals
+      concepts:
+      - Scalability
+      - High availability
+      - Failure domains
+      - Managed services
+  - id: cloud-governance-subject
+    title: Governance and Economics
+    order: 2
+    topics:
+    - id: cloud-governance
+      title: Cloud Governance and Cost
+      order: 1
+      prerequisites:
+      - cloud-fundamentals
+      - identity-access
+      concepts:
+      - Account boundaries
+      - IAM application
+      - Metering
+      - Cost allocation
+      - Budgets
+      - Cloud security
+- id: aws
+  title: AWS
+  order: 11
+  path: 11-aws/README.md
+  purpose: Map transferable cloud concepts onto AWS service boundaries and operational
+    choices.
+  prerequisites:
+  - cloud-governance
+  - identity-access
+  subjects:
+  - id: aws-foundation-subject
+    title: Identity and Network Foundation
+    order: 1
+    topics:
+    - id: aws-iam
+      title: AWS IAM and Organizations
+      order: 1
+      prerequisites:
+      - cloud-governance
+      - identity-access
+      concepts:
+      - Policies
+      - Roles
+      - Federation
+      - Organizations
+      - Service control policies
+      implements:
+      - identity-access
+    - id: aws-vpc
+      title: AWS VPC
+      order: 2
+      prerequisites:
+      - cloud-fundamentals
+      - subnetting
+      - routing
+      - nat
+      - network-security
+      concepts:
+      - Subnets
+      - Route tables
+      - Internet Gateway
+      - NAT Gateway
+      - Security Groups
+      - NACLs
+      implements:
+      - routing
+      - subnetting
+      - network-security
+  - id: aws-services-subject
+    title: Compute Data and Traffic
+    order: 2
+    topics:
+    - id: aws-compute
+      title: AWS Compute
+      order: 1
+      prerequisites:
+      - aws-vpc
+      - container-fundamentals
+      concepts:
+      - EC2
+      - AMIs
+      - EBS
+      - Auto Scaling
+      - Lambda
+    - id: aws-data
+      title: AWS Data Services
+      order: 2
+      prerequisites:
+      - cloud-fundamentals
+      - data-modeling
+      - database-transactions
+      concepts:
+      - S3
+      - RDS
+      - DynamoDB
+      - Durability
+      - Access patterns
+    - id: aws-traffic
+      title: AWS Traffic and DNS
+      order: 3
+      prerequisites:
+      - aws-vpc
+      - proxies-load-balancing
+      - dns
+      concepts:
+      - ALB
+      - NLB
+      - Route 53
+      - Routing policies
+      implements:
+      - dns
+      - proxies-load-balancing
+    - id: aws-messaging
+      title: AWS Messaging
+      order: 4
+      prerequisites:
+      - messaging
+      - cloud-fundamentals
+      concepts:
+      - SQS
+      - SNS
+      - Delivery semantics
+      - Dead-letter queues
+      implements:
+      - messaging
+  - id: aws-operations-subject
+    title: Operations and Managed Kubernetes
+    order: 3
+    topics:
+    - id: aws-operations
+      title: AWS Operations and Secrets
+      order: 1
+      prerequisites:
+      - aws-iam
+      - telemetry
+      - secrets-key-management
+      concepts:
+      - CloudWatch
+      - CloudTrail
+      - Secrets Manager
+      - KMS
+      implements:
+      - telemetry
+      - secrets-key-management
+    - id: aws-eks
+      title: AWS EKS
+      order: 2
+      prerequisites:
+      - kubernetes-cluster-operations
+      - aws-vpc
+      - aws-iam
+      concepts:
+      - Managed control plane
+      - Worker nodes
+      - Network integration
+      - Access
+      - Upgrades
+- id: infrastructure-as-code
+  title: Infrastructure as Code
+  order: 12
+  path: 12-infrastructure-as-code/README.md
+  purpose: Describe desired infrastructure and manage changes, state, dependencies,
+    and drift.
+  prerequisites:
+  - programming-fundamentals
+  subjects:
+  - id: iac-concepts-subject
+    title: Conceptual Foundations
+    order: 1
+    topics:
+    - id: desired-state
+      title: Desired State and Reconciliation
+      order: 1
+      prerequisites:
+      - programming-fundamentals
+      concepts:
+      - Declarative configuration
+      - Observed state
+      - Reconciliation
+      - Drift
+      related:
+      - gitops-principles
+    - id: infrastructure-as-code-principles
+      title: Infrastructure as Code Principles
+      order: 2
+      prerequisites:
+      - desired-state
+      - idempotency
+      - cloud-fundamentals
+      - git-fundamentals
+      concepts:
+      - Resource graph
+      - Planning
+      - Change review
+      - Lifecycle
+      - Infrastructure ownership
+  - id: terraform-implementation-subject
+    title: Terraform Implementation
+    order: 2
+    topics:
+    - id: terraform-configuration
+      title: Terraform Configuration
+      order: 1
+      prerequisites:
+      - infrastructure-as-code-principles
+      concepts:
+      - Providers
+      - Resources
+      - Data sources
+      - Variables
+      - Outputs
+      - Locals
+      - Dependency graph
+      - Lifecycle
+      implements:
+      - infrastructure-as-code-principles
+      - desired-state
+    - id: terraform-state
+      title: Terraform State
+      order: 2
+      prerequisites:
+      - terraform-configuration
+      concepts:
+      - Resource bindings
+      - Remote state
+      - State locking
+      - Import
+      - Drift
+      - Sensitive data
+      implements:
+      - desired-state
+      note: 12-infrastructure-as-code/terraform-state.md
+      related:
+      - desired-state
+      - secrets-key-management
+    - id: terraform-modules
+      title: Terraform Modules and Environments
+      order: 3
+      prerequisites:
+      - terraform-state
+      concepts:
+      - Modules
+      - Contracts
+      - Workspaces
+      - Environment isolation
+    - id: infrastructure-testing
+      title: Infrastructure Testing and Delivery
+      order: 4
+      prerequisites:
+      - terraform-modules
+      - software-testing
+      - ci-fundamentals
+      concepts:
+      - Validation
+      - Plan review
+      - Policy
+      - Terraform CI/CD
+      - Integration testing
+- id: configuration-management
+  title: Configuration Management
+  order: 13
+  path: 13-configuration-management/README.md
+  purpose: Converge host configuration through repeatable, testable automation.
+  prerequisites:
+  - desired-state
+  - idempotency
+  - linux-services
+  subjects:
+  - id: configuration-concepts-subject
+    title: Configuration Concepts
+    order: 1
+    topics:
+    - id: configuration-management-principles
+      title: Configuration Management Principles
+      order: 1
+      prerequisites:
+      - desired-state
+      - idempotency
+      - linux-services
+      concepts:
+      - Host configuration
+      - Convergence
+      - Inventory
+      - Configuration drift
+  - id: ansible-implementation-subject
+    title: Ansible Implementation
+    order: 2
+    topics:
+    - id: ansible-automation
+      title: Ansible Automation
+      order: 1
+      prerequisites:
+      - configuration-management-principles
+      - linux-networking
+      - secrets-key-management
+      concepts:
+      - Inventory
+      - Playbooks
+      - Variables
+      - Roles
+      - Templates
+      - Handlers
+      - Secrets
+      - Ansible automation
+      implements:
+      - configuration-management-principles
+      - idempotency
+    - id: configuration-testing
+      title: Configuration Testing
+      order: 2
+      prerequisites:
+      - ansible-automation
+      - software-testing
+      concepts:
+      - Molecule
+      - Idempotence tests
+      - Check mode limitations
+      - Integration environments
+- id: kubernetes
+  title: Kubernetes and Container Orchestration
+  order: 14
+  path: 14-kubernetes/README.md
+  purpose: Understand orchestration through the API, reconciliation, workload resources,
+    and cluster operations.
+  prerequisites:
+  - container-fundamentals
+  - desired-state
+  - docker-networking
+  subjects:
+  - id: kubernetes-foundation-subject
+    title: Fundamentals Architecture and Objects
+    order: 1
+    topics:
+    - id: kubernetes-architecture
+      title: Kubernetes Architecture
+      order: 1
+      prerequisites:
+      - container-fundamentals
+      - desired-state
+      - docker-networking
+      concepts:
+      - Orchestration
+      - Control plane
+      - API server
+      - etcd
+      - Scheduler
+      - Controller manager
+      - kubelet
+      - kube-proxy
+    - id: kubernetes-objects
+      title: Kubernetes Objects and Access
+      order: 2
+      prerequisites:
+      - kubernetes-architecture
+      concepts:
+      - Objects
+      - Namespaces
+      - Contexts
+      - kubectl
+      - Labels
+      - Selectors
+    - id: kubernetes-pods
+      title: Kubernetes Pods and Workloads
+      order: 3
+      prerequisites:
+      - kubernetes-objects
+      - container-images
+      concepts:
+      - Pods
+      - ReplicaSets
+      - Deployments
+      - StatefulSets
+      - DaemonSets
+      - Jobs
+      - CronJobs
+  - id: kubernetes-network-storage-subject
+    title: Networking and Storage
+    order: 2
+    topics:
+    - id: kubernetes-networking
+      title: Kubernetes Networking
+      order: 1
+      prerequisites:
+      - kubernetes-pods
+      - dns
+      - routing
+      concepts:
+      - Pod networking
+      - CNI
+      - CoreDNS
+      - Service discovery
+      implements:
+      - dns
+      - routing
+    - id: kubernetes-services
+      title: Kubernetes Services
+      order: 2
+      prerequisites:
+      - kubernetes-networking
+      - tcp
+      - proxies-load-balancing
+      concepts:
+      - ClusterIP
+      - NodePort
+      - LoadBalancer
+      - EndpointSlices
+      - Selectors
+      implements:
+      - proxies-load-balancing
+      note: 14-kubernetes/kubernetes-services.md
+      related:
+      - dns
+      - kubernetes-pods
+      - kubernetes-ingress
+    - id: kubernetes-ingress
+      title: Kubernetes Ingress and Gateway API
+      order: 3
+      prerequisites:
+      - kubernetes-services
+      - http
+      - tls
+      concepts:
+      - Ingress
+      - Ingress controllers
+      - Gateway API
+      - HTTP routing
+    - id: kubernetes-storage
+      title: Kubernetes Storage
+      order: 4
+      prerequisites:
+      - kubernetes-pods
+      - container-storage
+      concepts:
+      - CSI
+      - Volumes
+      - PV
+      - PVC
+      - StorageClass
+      - Access modes
+  - id: kubernetes-control-subject
+    title: Configuration Scheduling and Security
+    order: 3
+    topics:
+    - id: kubernetes-configuration
+      title: Kubernetes Configuration
+      order: 1
+      prerequisites:
+      - kubernetes-pods
+      - secrets-key-management
+      concepts:
+      - ConfigMaps
+      - Secrets
+      - Configuration delivery
+      - Rollouts
+    - id: kubernetes-scheduling
+      title: Kubernetes Scheduling and Resources
+      order: 2
+      prerequisites:
+      - kubernetes-pods
+      - systems-performance
+      concepts:
+      - Taints
+      - Tolerations
+      - Affinity
+      - Requests
+      - Limits
+      - HPA
+      - VPA
+    - id: kubernetes-security
+      title: Kubernetes Security
+      order: 3
+      prerequisites:
+      - kubernetes-objects
+      - identity-access
+      - network-security
+      - container-security
+      concepts:
+      - RBAC
+      - ServiceAccounts
+      - NetworkPolicy
+      - Admission
+      - Pod security
+      implements:
+      - identity-access
+      - network-security
+  - id: kubernetes-operations-subject
+    title: Diagnosis Extensions and Architecture
+    order: 4
+    topics:
+    - id: kubernetes-troubleshooting
+      title: Kubernetes Troubleshooting
+      order: 1
+      prerequisites:
+      - kubernetes-services
+      - kubernetes-storage
+      - kubernetes-scheduling
+      - telemetry
+      concepts:
+      - Events
+      - Logs
+      - Pending Pods
+      - Crash loops
+      - DNS
+      - Storage diagnosis
+    - id: kubernetes-extensions
+      title: Kubernetes Extensions
+      order: 2
+      prerequisites:
+      - kubernetes-architecture
+      - api-design
+      concepts:
+      - CRDs
+      - Operators
+      - Webhooks
+      - Controller reconciliation
+    - id: kubernetes-cluster-operations
+      title: Kubernetes Cluster Architecture and Operations
+      order: 3
+      prerequisites:
+      - kubernetes-troubleshooting
+      - kubernetes-security
+      - backup-recovery
+      concepts:
+      - Control-plane availability
+      - Upgrades
+      - Backup
+      - Node maintenance
+      - Production operations
+- id: ci-cd
+  title: CI-CD
+  order: 15
+  path: 15-ci-cd/README.md
+  purpose: Build and validate changes, produce artifacts, and deploy them with controlled
+    exposure.
+  prerequisites:
+  - git-workflows
+  - software-testing
+  - program-dependencies
+  subjects:
+  - id: continuous-integration-subject
+    title: Continuous Integration
+    order: 1
+    topics:
+    - id: ci-fundamentals
+      title: Continuous Integration
+      order: 1
+      prerequisites:
+      - git-workflows
+      - software-testing
+      - program-dependencies
+      concepts:
+      - Build
+      - Test
+      - Feedback
+      - GitHub Actions
+      - GitLab CI
+      - Jenkins
+      - Runners and agents
+    - id: artifact-management
+      title: Artifact Management
+      order: 2
+      prerequisites:
+      - ci-fundamentals
+      - container-images
+      concepts:
+      - Immutable artifacts
+      - Versioning
+      - Container build pipelines
+      - Promotion
+  - id: continuous-delivery-subject
+    title: Continuous Delivery
+    order: 2
+    topics:
+    - id: deployment-strategies
+      title: Deployment Strategies
+      order: 1
+      prerequisites:
+      - artifact-management
+      - proxies-load-balancing
+      concepts:
+      - Continuous delivery
+      - Continuous deployment
+      - Rolling deployment
+      - Blue-green
+      - Canary
+      - Rollback
+    - id: pipeline-security
+      title: Pipeline Security
+      order: 2
+      prerequisites:
+      - ci-fundamentals
+      - supply-chain-security
+      - secrets-key-management
+      concepts:
+      - Runner isolation
+      - Secrets
+      - Permissions
+      - Provenance
+      - Untrusted contributions
+- id: gitops
+  title: GitOps
+  order: 16
+  path: 16-gitops/README.md
+  purpose: Apply versioned desired state through reconciliation with clear ownership
+    and recovery paths.
+  prerequisites:
+  - desired-state
+  - git-workflows
+  - kubernetes-objects
+  subjects:
+  - id: gitops-concepts-subject
+    title: Principles and Configuration
+    order: 1
+    topics:
+    - id: gitops-principles
+      title: GitOps Principles
+      order: 1
+      prerequisites:
+      - desired-state
+      - git-workflows
+      - kubernetes-objects
+      concepts:
+      - Versioned desired state
+      - Pull-based delivery
+      - Reconciliation
+      - Drift
+      - Ownership
+    - id: helm-kustomize
+      title: Helm and Kustomize
+      order: 2
+      prerequisites:
+      - kubernetes-configuration
+      concepts:
+      - Charts
+      - Values
+      - Templates
+      - Bases
+      - Overlays
+      - Rendered configuration
+  - id: gitops-implementation-subject
+    title: Controllers and Diagnosis
+    order: 2
+    topics:
+    - id: argo-cd
+      title: Argo CD
+      order: 1
+      prerequisites:
+      - gitops-principles
+      - helm-kustomize
+      - deployment-strategies
+      concepts:
+      - Application
+      - ApplicationSet
+      - Sync
+      - Sync waves
+      - Health
+      - Drift
+      implements:
+      - gitops-principles
+      - desired-state
+    - id: gitops-troubleshooting
+      title: GitOps Troubleshooting
+      order: 2
+      prerequisites:
+      - argo-cd
+      - kubernetes-troubleshooting
+      concepts:
+      - Render failures
+      - Sync failures
+      - Health checks
+      - Competing controllers
+- id: observability
+  title: Observability
+  order: 17
+  path: 17-observability/README.md
+  purpose: Use telemetry to explain system behavior and support actionable diagnosis.
+  prerequisites:
+  - programming-fundamentals
+  subjects:
+  - id: telemetry-foundations-subject
+    title: Signals and Instrumentation
+    order: 1
+    topics:
+    - id: telemetry
+      title: Telemetry and Observability
+      order: 1
+      prerequisites:
+      - programming-fundamentals
+      concepts:
+      - Monitoring
+      - Metrics
+      - Logs
+      - Traces
+      - Signal context
+      - Instrumentation
+    - id: opentelemetry
+      title: OpenTelemetry
+      order: 2
+      prerequisites:
+      - telemetry
+      - network-programming
+      concepts:
+      - Instrumentation
+      - Context propagation
+      - Collectors
+      - Exporters
+      implements:
+      - telemetry
+  - id: monitoring-practice-subject
+    title: Monitoring and Investigation
+    order: 2
+    topics:
+    - id: prometheus-grafana
+      title: Prometheus and Grafana
+      order: 1
+      prerequisites:
+      - telemetry
+      - http
+      concepts:
+      - Scraping
+      - Time series
+      - Labels
+      - PromQL
+      - Dashboards
+      - Cardinality
+      implements:
+      - telemetry
+    - id: alerting-investigation
+      title: Alerting and Incident Investigation
+      order: 2
+      prerequisites:
+      - prometheus-grafana
+      - reliability-objectives
+      concepts:
+      - Actionable alerts
+      - Symptoms
+      - Correlation
+      - Investigation queries
+- id: security
+  title: Security
+  order: 18
+  path: 18-security/README.md
+  purpose: Understand trust, identities, threat boundaries, and safeguards across
+    systems.
+  prerequisites:
+  - computer-fundamentals
+  subjects:
+  - id: security-foundations-subject
+    title: Trust and Identity
+    order: 1
+    topics:
+    - id: security-fundamentals
+      title: Security Fundamentals
+      order: 1
+      prerequisites:
+      - computer-fundamentals
+      concepts:
+      - Threat modeling
+      - Least privilege
+      - Defense in depth
+      - Zero Trust concepts
+    - id: identity-access
+      title: Identity and Access Management
+      order: 2
+      prerequisites:
+      - security-fundamentals
+      concepts:
+      - Identity
+      - Authentication
+      - Authorization
+      - IAM
+      - RBAC
+      - Federation
+      - OIDC
+      - SAML
+      note: 18-security/identity-access.md
+      related:
+      - linux-users-permissions
+      - aws-iam
+      - kubernetes-security
+      - secrets-key-management
+    - id: pki
+      title: Cryptography and PKI
+      order: 3
+      prerequisites:
+      - security-fundamentals
+      concepts:
+      - Encryption
+      - Hashing
+      - Signatures
+      - Certificates
+      - Trust chains
+      - PKI
+    - id: secrets-key-management
+      title: Secrets and Key Management
+      order: 4
+      prerequisites:
+      - identity-access
+      - pki
+      concepts:
+      - Secret lifecycle
+      - Rotation
+      - Encryption keys
+      - Envelope encryption
+  - id: security-controls-subject
+    title: System and Delivery Controls
+    order: 2
+    topics:
+    - id: network-security
+      title: Network Security
+      order: 1
+      prerequisites:
+      - routing
+      - identity-access
+      concepts:
+      - Firewalls
+      - Segmentation
+      - Trust boundaries
+      - Stateful filtering
+    - id: container-security
+      title: Container Security
+      order: 2
+      prerequisites:
+      - container-images
+      - security-fundamentals
+      concepts:
+      - Image security
+      - Runtime privileges
+      - Vulnerability management
+    - id: supply-chain-security
+      title: Supply Chain Security
+      order: 3
+      prerequisites:
+      - program-dependencies
+      - pki
+      concepts:
+      - Dependency trust
+      - SBOM
+      - Signing
+      - Provenance
+      - Vulnerability response
+    - id: policy-as-code
+      title: Policy as Code
+      order: 4
+      prerequisites:
+      - identity-access
+      - desired-state
+      concepts:
+      - Policy evaluation
+      - OPA
+      - Gatekeeper
+      - Audit and enforcement
+- id: distributed-systems
+  title: Distributed Systems
+  order: 19
+  path: 19-distributed-systems/README.md
+  purpose: Reason about partial failure, state coordination, and communication between
+    independent nodes.
+  prerequisites:
+  - concurrency
+  - tcp
+  - database-transactions
+  subjects:
+  - id: distributed-foundations-subject
+    title: Failure and State
+    order: 1
+    topics:
+    - id: distributed-fundamentals
+      title: Distributed Systems Fundamentals
+      order: 1
+      prerequisites:
+      - concurrency
+      - tcp
+      - database-transactions
+      concepts:
+      - Partial failure
+      - Time
+      - Network partitions
+      - CAP theorem
+      - Consistency
+      - Availability
+      - Partition tolerance
+    - id: replication-consensus
+      title: Replication and Consensus
+      order: 2
+      prerequisites:
+      - distributed-fundamentals
+      concepts:
+      - Replication
+      - Leader election
+      - Consensus
+      - Quorum
+    - id: partitioning-sharding
+      title: Partitioning and Sharding
+      order: 3
+      prerequisites:
+      - distributed-fundamentals
+      - data-modeling
+      concepts:
+      - Partition keys
+      - Hotspots
+      - Rebalancing
+      - Ownership
+  - id: distributed-interactions-subject
+    title: Communication and Reliability
+    order: 2
+    topics:
+    - id: messaging
+      title: Messaging and Event-Driven Architecture
+      order: 1
+      prerequisites:
+      - distributed-fundamentals
+      concepts:
+      - Queues
+      - Pub-sub
+      - Events
+      - Ordering
+      - Delivery guarantees
+    - id: idempotency
+      title: Idempotency
+      order: 2
+      prerequisites:
+      - programming-fundamentals
+      concepts:
+      - Repeated operations
+      - Stable effects
+      - Deduplication keys
+      - Safe automation
+      related:
+      - resilient-communication
+      - configuration-management-principles
+    - id: resilient-communication
+      title: Resilient Communication
+      order: 3
+      prerequisites:
+      - distributed-fundamentals
+      - idempotency
+      concepts:
+      - Timeouts
+      - Retries
+      - Backoff
+      - Jitter
+      - Circuit breakers
+    - id: distributed-transactions
+      title: Distributed Transactions
+      order: 4
+      prerequisites:
+      - database-transactions
+      - messaging
+      - idempotency
+      concepts:
+      - Atomic commit
+      - Sagas
+      - Outbox
+      - Compensation
+- id: sre
+  title: Site Reliability Engineering
+  order: 20
+  path: 20-sre/README.md
+  purpose: Translate user expectations into reliability decisions and sustainable
+    operations.
+  prerequisites:
+  - os-fundamentals
+  subjects:
+  - id: reliability-models-subject
+    title: Reliability Foundations
+    order: 1
+    topics:
+    - id: reliability-fundamentals
+      title: Reliability Fundamentals
+      order: 1
+      prerequisites:
+      - os-fundamentals
+      concepts:
+      - Reliability
+      - Availability
+      - Failure domains
+      - Redundancy
+    - id: reliability-objectives
+      title: Reliability Objectives
+      order: 2
+      prerequisites:
+      - reliability-fundamentals
+      - telemetry
+      concepts:
+      - SLI
+      - SLO
+      - SLA
+      - Error budgets
+      - User journeys
+      related:
+      - incident-management
+  - id: reliability-practice-subject
+    title: Capacity and Resilience
+    order: 2
+    topics:
+    - id: capacity-performance
+      title: Capacity and Performance
+      order: 1
+      prerequisites:
+      - systems-performance
+      - reliability-objectives
+      concepts:
+      - Capacity planning
+      - Saturation
+      - Scaling
+      - Performance
+      - Load tests
+    - id: resilience-engineering
+      title: Resilience Engineering
+      order: 2
+      prerequisites:
+      - resilient-communication
+      - reliability-objectives
+      - backup-recovery
+      concepts:
+      - Resilience
+      - Chaos engineering
+      - Hypotheses
+      - Blast radius
+      - Recovery verification
+- id: system-design
+  title: System Design
+  order: 21
+  path: 21-system-design/README.md
+  purpose: Combine concepts into architectures with explicit requirements and tradeoffs.
+  prerequisites:
+  - software-design
+  - reliability-fundamentals
+  - data-modeling
+  subjects:
+  - id: design-method-subject
+    title: Requirements and Estimation
+    order: 1
+    topics:
+    - id: system-design-method
+      title: System Design Method
+      order: 1
+      prerequisites:
+      - software-design
+      - reliability-fundamentals
+      - data-modeling
+      concepts:
+      - Functional requirements
+      - Non-functional requirements
+      - Latency
+      - Throughput
+      - Capacity estimation
+      - High-level architecture
+      - Low-level design
+      - Tradeoffs
+  - id: architecture-patterns-subject
+    title: Architecture Patterns and Tradeoffs
+    order: 2
+    topics:
+    - id: caching
+      title: Caching
+      order: 1
+      prerequisites:
+      - data-structures-algorithms
+      - distributed-fundamentals
+      concepts:
+      - Cache keys
+      - Invalidation
+      - TTL
+      - Eviction
+      - Stampedes
+    - id: scalable-architecture
+      title: Scalable Architecture
+      order: 2
+      prerequisites:
+      - system-design-method
+      - caching
+      - partitioning-sharding
+      - replication-consensus
+      - messaging
+      - proxies-load-balancing
+      concepts:
+      - Horizontal scaling
+      - Vertical scaling
+      - Databases
+      - Load balancing
+      - Queues
+      - Event-driven systems
+      - Replication
+      - Consistency
+      - Failure modes
+- id: production-operations
+  title: Production Operations
+  order: 22
+  path: 22-production-operations/README.md
+  purpose: Operate services through incidents, changes, and tested recovery procedures.
+  prerequisites:
+  - reliability-objectives
+  - deployment-strategies
+  subjects:
+  - id: operational-readiness-subject
+    title: Readiness and Change
+    order: 1
+    topics:
+    - id: operational-readiness
+      title: Operational Readiness
+      order: 1
+      prerequisites:
+      - reliability-objectives
+      - deployment-strategies
+      concepts:
+      - Runbooks
+      - Ownership
+      - On-call
+      - Handoffs
+      - Safe changes
+    - id: backup-recovery
+      title: Backup and Disaster Recovery
+      order: 2
+      prerequisites:
+      - linux-filesystem
+      - reliability-fundamentals
+      concepts:
+      - Backup
+      - Restore
+      - Recovery
+      - RPO
+      - RTO
+      - Disaster recovery
+      - Restore exercises
+  - id: incident-response-subject
+    title: Response and Learning
+    order: 2
+    topics:
+    - id: incident-management
+      title: Incident Management
+      order: 1
+      prerequisites:
+      - operational-readiness
+      - alerting-investigation
+      concepts:
+      - Triage
+      - Coordination
+      - Communication
+      - Mitigation
+      - RCA
+      - Blameless learning
+- id: advanced
+  title: Advanced and Specialization
+  order: 23
+  path: 23-advanced/README.md
+  purpose: Select deeper paths after mastering their foundations; expand from actual
+    needs.
+  prerequisites:
+  - kubernetes-cluster-operations
+  - gitops-principles
+  - infrastructure-testing
+  - system-design-method
+  subjects:
+  - id: specialization-paths-subject
+    title: Specialization Paths
+    order: 1
+    topics:
+    - id: platform-engineering
+      title: Platform Engineering
+      order: 1
+      prerequisites:
+      - kubernetes-cluster-operations
+      - gitops-principles
+      - infrastructure-testing
+      - system-design-method
+      concepts:
+      - Self-service interfaces
+      - Golden paths
+      - Platform contracts
+      - Developer experience
+    - id: performance-specialization
+      title: Systems Performance Specialization
+      order: 2
+      prerequisites:
+      - capacity-performance
+      - linux-troubleshooting
+      concepts:
+      - Profiling
+      - Workload characterization
+      - Cross-layer bottlenecks
